@@ -1,0 +1,36 @@
+.Sidebar{
+  height: calc(100vh - var(--navbar-height)) ;
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  position: relative;
+  transition: width 0.5s;
+}
+
+.SidebarCollapsed {
+  width: var(--sibebar-width-collapsed);
+}
+
+
+.switcher{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+}
+
+.lang{
+  color : var(--inverted-primary-color);
+  margin-left: 20px;
+}
+
+
+
+
+
+

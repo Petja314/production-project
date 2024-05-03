@@ -1,4 +1,7 @@
 :root {
+     box-sizing: border-box;
+
+
     --font-family-main : Consolas,"Times New Roman" , Serif;
 
     --font-size-m : 16px;
@@ -8,4 +11,12 @@
     --font-size-l: 24px;
     --font-line-l : 32px;
     --font-l : var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+    /*Sizes*/
+    --navbar-height : 50px;
+
+
+    /*Sidebar*/
+    --sidebar-width : 300px ;
+    --sibebar-width-collapsed  :  80px;
 }
