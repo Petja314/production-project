@@ -1,0 +1,25 @@
+.PageError{
+  border: 4px solid green;
+}
+
+
+.PageErrorBox {
+  height: 100vh;
+  padding: 200px;
+}
+
+.PageErrorBox p   {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  font-weight: bold;
+  font-size:  var(--font-line-l);
+}
+
+.PageErrorBox button   {
+  padding: 20px;
+  border: 2px solid green;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 20px;
+}
