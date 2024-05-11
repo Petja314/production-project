@@ -37,5 +37,11 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  // In tsconfig.json
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.tstton",
+    "src"
+  ]
 }
