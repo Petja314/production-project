@@ -1,7 +1,11 @@
 {
-  "Test example": "Test example",
-  "Translate": "Translate",
-  "Language" : "English",
-  "Page not found": "Page not found",
-  "Page error occurred": "Page error occurred"
+  "Тестовый пример": "Test example",
+  "Перевод": "Translate",
+  "Главная страница": "Main page",
+  "Язык": "English",
+  "новый перевод": "новый перевод",
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
+  "Обновить страницу": "Обновить страницу",
+  "throw error": "throw error"
 }

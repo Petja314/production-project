@@ -1,21 +1,20 @@
-import {fireEvent, getByTestId, render, screen} from "@testing-library/react"
-import {Sidebar} from "widgets/Sidebar";
-import {RenderWithTranslation} from "shared/lib/test/renderWithTranslation/renderWithTranslation";
+import { fireEvent, screen } from '@testing-library/react';
+import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
+import {
+    renderWithTranslation,
+} from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 
-
-describe("Sidebar" , () => {
-    test("to be in document" , () => {
-        RenderWithTranslation(<Sidebar/>)
+describe('Sidebar', () => {
+    test('with only first param', () => {
+        renderWithTranslation(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-        // screen.debug()
-    })
+    });
 
-    test("collapse sidebar" , () => {
-        RenderWithTranslation(<Sidebar/>)
-        const collapsedBtn = screen.getByTestId('sidebar-collapsed')
+    test('test toggle', () => {
+        renderWithTranslation(<Sidebar />);
+        const toggleBtn = screen.getByTestId('sidebar-toggle');
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-        fireEvent.click(collapsedBtn)
-        expect(screen.getByTestId('sidebar')).toHaveClass('SidebarCollapsed')
-
-    })
-})
+        fireEvent.click(toggleBtn);
+        expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
+    });
+});
