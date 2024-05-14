@@ -8,7 +8,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => (
+export const NavBar = ({ className }: NavbarProps) => (
     <div className={classNames(cls.Navbar, {}, [className])}>
         <div className={cls.links}>
             <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>

@@ -1,17 +1,17 @@
 import React from 'react';
 import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {Theme} from "app/providers/ThemeProvider";
-import {Navbar} from "widgets/Navbar";
+import {NavBar} from "widgets/Navbar";
 
 export default {
     title: 'widgets/Navbar',
-    component: Navbar,
+    component: NavBar,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 }
 
-const Template = (args: any) => <Navbar {...args} />;
+const Template = (args: any) => <NavBar {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

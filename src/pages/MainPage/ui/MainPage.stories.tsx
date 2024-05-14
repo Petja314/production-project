@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sidebar} from "widgets/Sidebar";
+import {SideBar} from "widgets/Sidebar";
 import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {Theme} from "app/providers/ThemeProvider";
 import MainPage from "pages/MainPage/ui/MainPage";

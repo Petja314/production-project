@@ -1,6 +1,6 @@
-import { Navbar } from './ui/Navbar';
+import { NavBar } from './ui/NavBar';
 
 
 export {
-    Navbar,
+    NavBar,
 };
