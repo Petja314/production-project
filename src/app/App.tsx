@@ -1,10 +1,11 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
 import { NavBar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/Sidebar';
+import { Modal } from 'shared/ui/Modal/Modal';
 
 function App() {
     const { theme } = useTheme();
@@ -13,6 +14,7 @@ function App() {
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <NavBar />
+
                 <div className="content-page">
                     <SideBar />
                     <AppRouter />

@@ -1,10 +1,10 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import React, {ButtonHTMLAttributes, FC} from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import React, { ButtonHTMLAttributes, FC } from 'react';
 import cls from './Button.module.scss';
-
 
 export enum ThemeButton {
     CLEAR = 'clear',
+    CLEAR_INVERTED = 'clearInverted',
     OUTLINED = 'outline',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted'
@@ -36,9 +36,9 @@ export const Button: FC<ButtonProps> = (props) => {
     const mods: Record<string, boolean> = {
         [cls[theme]]: true,
         [cls.square]: square,
-        [cls[size]]: true
+        [cls[size]]: true,
 
-    }
+    };
 
     return (
         <button
