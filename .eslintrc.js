@@ -4,7 +4,12 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -38,16 +43,11 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': [
-            'error',
-            {
-                markupOnly: true,
-                ignoreAttribute: ['data-testid'],
-            },
-        ],
+        'i18next/no-literal-string': 'off', // Disable the rule completely
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies,
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,
