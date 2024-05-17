@@ -2,6 +2,8 @@ import React, { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { LoginForm } from 'features/AuthByUsername/ui/LoginForm/LoginForm';
+import { useSelector } from 'react-redux';
+import { StateSchema } from 'app/StoreProvider';
 import cls from './LoginModal.module.scss';
 
 interface LoginModalProps {

@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import { BuildPaths } from '../build/types/config';
 import {buildCssLoaders} from "../build/loader/buildCssLoaders";
+import {DefinitionType} from "@reduxjs/toolkit/dist/query/endpointDefinitions";
 
 
 export default ({ config } : {config : webpack.Configuration}) => {
@@ -25,5 +26,10 @@ export default ({ config } : {config : webpack.Configuration}) => {
         use: ['@svgr/webpack'],
     })
     config.module.rules.push(buildCssLoaders(true))
+
+    config.plugins.push(new webpack.DefinePlugin({
+        __IS_DEV__ : true,
+    }))
+
     return config;
 };

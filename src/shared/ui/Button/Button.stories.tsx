@@ -101,3 +101,11 @@ SquareSizeExtraLarge.args = {
     size: ButtonSize.XL,
     theme: ThemeButton.BACKGROUND_INVERTED,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: '>',
+    theme: ThemeButton.OUTLINED,
+    disable : true
+};
+
