@@ -1,9 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { Suspense } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
-import { LoginForm } from 'features/AuthByUsername/ui/LoginForm/LoginForm';
-import { useSelector } from 'react-redux';
-import { StateSchema } from 'app/StoreProvider';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { LoginFormAsync } from 'features/AuthByUsername/ui/LoginForm/LoginForm.async';
 import cls from './LoginModal.module.scss';
 
 interface LoginModalProps {
@@ -26,7 +25,10 @@ export const LoginModal = (props : LoginModalProps) => {
             lazy
             className={classNames(cls.LoginModal, {}, [className])}
         >
-            <LoginForm />
+            <Suspense fallback={<Loader />}>
+                <LoginFormAsync />
+            </Suspense>
+
         </Modal>
     );
 };

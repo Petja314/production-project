@@ -1,7 +1,7 @@
-import type {PayloadAction} from '@reduxjs/toolkit';
-import {createSlice} from '@reduxjs/toolkit';
-import {LoginSchema} from 'features/AuthByUsername';
-import {loginByUsernameThunk} from 'features/AuthByUsername/model/services/loginByUsername';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import { LoginSchema } from 'features/AuthByUsername';
+import { loginByUsernameThunk } from 'features/AuthByUsername/model/services/loginByUsername';
 
 const initialState: LoginSchema = {
     username: '',
@@ -28,19 +28,19 @@ export const loginSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(loginByUsernameThunk.pending, (state, action: PayloadAction<any>) => {
-                state.error = undefined
-                state.isLoading = true
+                state.error = undefined;
+                state.isLoading = true;
             })
             .addCase(loginByUsernameThunk.fulfilled, (state, action: PayloadAction<any>) => {
-                state.isLoading = false
+                state.isLoading = false;
             })
             .addCase(loginByUsernameThunk.rejected, (state, action: PayloadAction<any>) => {
-                state.isLoading = false
-                state.error = action.payload
-            })
+                state.isLoading = false;
+                state.error = action.payload;
+            });
     },
 
 });
 
-export const {actions: loginActions} = loginSlice;
-export const {reducer: loginReducer} = loginSlice;
+export const { actions: loginActions } = loginSlice;
+export const { reducer: loginReducer } = loginSlice;
