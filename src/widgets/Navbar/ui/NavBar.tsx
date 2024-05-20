@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+    memo, useCallback, useEffect, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
@@ -12,17 +14,17 @@ interface NavbarProps {
     className?: string;
 }
 
-export const NavBar = ({ className }: NavbarProps) => {
+export const NavBar = memo(({ className }: NavbarProps) => {
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const authData = useSelector(getUserAuthData);
     const { t } = useTranslation();
 
-    useEffect(() => {
-        if (authData) {
-            setIsOpen(false);
-        }
-    }, [authData]);
+    // useEffect(() => {
+    //     if (authData) {
+    //         setIsOpen(false);
+    //     }
+    // }, [authData]);
 
     const onCloseModal = useCallback(() => {
         setIsOpen(false);
@@ -73,4 +75,4 @@ export const NavBar = ({ className }: NavbarProps) => {
 
         </div>
     );
-};
+});

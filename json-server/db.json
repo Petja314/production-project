@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "Dmitrijs",
+    "lastname": "Petrovs",
+    "age": 27,
+    "currency": "GBP",
+    "country": "Latvia",
+    "city": "Riga",
+    "username": "admin",
+    "avatar": "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611771.jpg?w=740&t=st=1716219534~exp=1716220134~hmac=7904d5e8708271dbad42a795362f4fa2652e04e0953106342cec9eb1be085369"
+  }
 }
