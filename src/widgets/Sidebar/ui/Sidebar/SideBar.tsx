@@ -24,11 +24,6 @@ export const SideBar = memo(({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const sidebarMenu = [
-        { icon: MenuIcon, title: 'О сайте', routeDirection: RoutePath.main },
-        { icon: AboutIcon, title: 'Главная', routeDirection: RoutePath.about },
-    ];
-
     const itemsList = useMemo(() => SidebarItemsList.map((item) => (
         <SidebarItem
             key={item.path}

@@ -1,6 +1,6 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/StoreProvider';
 import { getCounterValue } from 'enteties/Counter/module/selectors/getCounterValue/getCounterValue';
+import { DeepPartial } from '@reduxjs/toolkit';
 
 describe('getCounterValue.test', () => {
     test('first test', () => {

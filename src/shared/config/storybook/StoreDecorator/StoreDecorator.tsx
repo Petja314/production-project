@@ -3,17 +3,20 @@ import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Theme, ThemeProvider, useTheme } from 'app/providers/ThemeProvider';
 import { StateSchema, StoreProvider } from 'app/StoreProvider';
-import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { loginReducer } from 'features/AuthByUsername';
+import { profileReducer } from 'enteties/Profile';
+import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DeepPartial } from '@reduxjs/toolkit';
 
-const defaultAsyncReducers : DeepPartial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers : ReducersList = {
     login: loginReducer,
+    profile: profileReducer,
 };
 
 export const StoreDecorator = (
     state: DeepPartial<StateSchema>,
     theme?: Theme,
-    asyncReducers? : DeepPartial<ReducersMapObject<StateSchema>>,
+    asyncReducers? : ReducersList,
 ) => (StoryComponent: any) => (
     <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
         <ThemeProvider initialTheme={theme}>

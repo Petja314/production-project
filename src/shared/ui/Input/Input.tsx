@@ -8,11 +8,12 @@ interface InputProps {
     placeholder? : string
     onChange? : (value : string) => void
     'data-testid'? : string
+    value? : string
 }
 
 export const Input = memo((props : InputProps) => {
     const {
-        type = 'text', className, placeholder, onChange, 'data-testid': dataTestIdNaming,
+        type = 'text', className, placeholder, onChange, 'data-testid': dataTestIdNaming, value,
     } = props;
     const inputEventHandler = (e : React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
@@ -22,6 +23,7 @@ export const Input = memo((props : InputProps) => {
         <div className={classNames(cls.Input, {}, [className])}>
             {placeholder && <div className={cls.placeholder}>{placeholder}</div>}
             <input
+                value={value}
                 data-testid={dataTestIdNaming}
                 className={cls.InputField}
                 type={type}

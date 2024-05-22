@@ -1,6 +1,6 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/StoreProvider';
 import { getLoginUsernameState } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+import { DeepPartial } from '@reduxjs/toolkit';
 
 describe('getLoginUsername.test', () => {
     test('return username', () => {

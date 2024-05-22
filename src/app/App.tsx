@@ -7,6 +7,7 @@ import { NavBar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/Sidebar';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { useDispatch } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { userActions } from 'enteties/User/model/slice/userSlice';
 
 function App() {

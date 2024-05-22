@@ -27,7 +27,6 @@ export const Text = memo((props: TextProps) => {
 
     return (
         <div
-
             className={classNames(cls.Text, { [cls[theme]]: true }, [className])}
         >
             {title && <div className={cls.title}>{title}</div>}

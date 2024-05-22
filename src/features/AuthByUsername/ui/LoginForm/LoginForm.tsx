@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
@@ -16,9 +16,9 @@ import { loginByUsernameThunk } from '../../model/services/loginByUsername';
 import { getLoginState } from '../../model/selectors/selectLoginState/selectLoginState';
 import cls from './LoginForm.module.scss';
 
-export interface LoginFormProps {
+export type LoginFormProps = {
     className?: string
-    onSuccess? : () => void
+    onSuccess? : () => void | undefined
 }
 
 const initialReducers : ReducersList = {
@@ -37,7 +37,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsernameThunk({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess();
+            if (onSuccess) {
+                onSuccess();
+            }
         }
     }, [onSuccess, dispatch, username, password]);
 

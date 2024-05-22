@@ -1,11 +1,13 @@
 import React, {
-    memo,
+    memo, MutableRefObject,
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
+
+type TimeoutType = ReturnType<typeof setTimeout> & { __promisify__?: any };
 
 interface ModalProps {
     className?: string
@@ -29,7 +31,7 @@ export const Modal = memo((props: ModalProps) => {
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const [isMounted, setIsMounted] = useState<boolean>(false);
     const { theme } = useTheme();
-    const timeRef = useRef<any>();
+    const timeRef = useRef() as MutableRefObject<TimeoutType>;
 
     useEffect(() => {
         if (isOpen) {
@@ -70,7 +72,7 @@ export const Modal = memo((props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Record<string, boolean | undefined> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
 
