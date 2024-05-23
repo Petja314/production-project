@@ -1,15 +1,37 @@
 .ProfileCard{
   margin-top: 20px;
-  border: 2px solid black;
+  border: 2px solid var(--inverted-bg-color);
   padding: 30px;
 }
 
-.header{
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .data{
   display: flex;
+  flex-direction: column;
   gap: 30px;
+}
+
+.data img{
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.loading,
+.error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.editing{
+  border: 2px solid var(--inverted-primary-color);
+
 }
