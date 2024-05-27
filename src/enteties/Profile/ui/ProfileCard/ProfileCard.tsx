@@ -63,6 +63,7 @@ export const ProfileCard = ({
         [cls.editing]: !readonly,
     };
 
+    console.log('data?.name', data?.name)
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
 

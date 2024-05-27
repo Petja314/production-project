@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions, updateProfileDataThunk } from 'enteties/Profile';
+import {
+    getProfileReadonly, getProfileValidateErrors, profileActions, updateProfileDataThunk
+} from 'enteties/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
@@ -16,6 +18,7 @@ interface ProfilePageHeaderProps {
 export const ProfilePageHeader = ({ className } : ProfilePageHeaderProps) => {
     const { t } = useTranslation();
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors)
     const dispatch = useAppDispatch();
 
     const onEdit = useCallback(() => {
@@ -53,6 +56,7 @@ export const ProfilePageHeader = ({ className } : ProfilePageHeaderProps) => {
                             >
                                 {t('Отменить')}
                             </Button>
+
                             <Button
                                 theme={ThemeButton.OUTLINED}
                                 onClick={onSave}
@@ -60,6 +64,7 @@ export const ProfilePageHeader = ({ className } : ProfilePageHeaderProps) => {
                             >
                                 {t('Сохранить')}
                             </Button>
+
                         </>
 
                     )}

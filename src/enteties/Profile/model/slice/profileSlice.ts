@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
-    Profile, ProfileSchema, updateProfileDataThunk, fetchProfileDataThunk,
+    fetchProfileDataThunk, Profile, ProfileSchema, updateProfileDataThunk,
 } from 'enteties/Profile';
 
 const initialState : ProfileSchema = {
@@ -20,19 +20,17 @@ export const profileSlice = createSlice({
         },
         cancelEdit: (state) => {
             state.readonly = true;
+            state.validateError = undefined
             state.form = state.data;
         },
         updateProfile: (state, action: PayloadAction<Profile>) => {
-            // state.form = {
-            //     ...state.data,
-            //     ...action.payload,
-            // };
             state.form = { ...state.form, ...action.payload };
         },
     },
     extraReducers: (builder) => {
         builder
             .addCase(fetchProfileDataThunk.pending, (state, action: PayloadAction<any>) => {
+                state.error = undefined;
                 state.isLoading = true;
             })
             .addCase(fetchProfileDataThunk.fulfilled, (state, action: PayloadAction<Profile>) => {
@@ -41,10 +39,11 @@ export const profileSlice = createSlice({
                 state.form = action.payload;
             })
             .addCase(fetchProfileDataThunk.rejected, (state, action: PayloadAction<any>) => {
-                state.isLoading = true;
+                state.isLoading = false;
                 state.error = action.payload;
             })
             .addCase(updateProfileDataThunk.pending, (state, action: PayloadAction<any>) => {
+                state.validateError = undefined;
                 state.isLoading = true;
             })
             .addCase(updateProfileDataThunk.fulfilled, (state, action: PayloadAction<Profile>) => {
@@ -52,10 +51,11 @@ export const profileSlice = createSlice({
                 state.data = action.payload;
                 state.form = action.payload;
                 state.readonly = true;
+                state.validateError = undefined;
             })
             .addCase(updateProfileDataThunk.rejected, (state, action: PayloadAction<any>) => {
-                state.isLoading = true;
-                state.error = action.payload;
+                state.isLoading = false;
+                state.validateError = action.payload;
             });
     },
 });

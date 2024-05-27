@@ -27,3 +27,8 @@ export { getProfileError } from './model/selectors/getProfileError/getProfileErr
 export { getProfileLoading } from './model/selectors/getProfileLoading/getProfileLoading';
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
+export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+
+// VALIDATION
+
+export { validateProfile } from './model/services/validateProfile/validateProfile'
