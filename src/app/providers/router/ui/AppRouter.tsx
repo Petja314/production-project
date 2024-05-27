@@ -23,39 +23,13 @@ const AppRouter = () => {
                         {element}
                     </RequireAuth>
                 ) : element}
-                // element={route.athOnly ? <RequireAuth /> : element}
             />
         )
     }, [])
 
-    // const isAuth = useSelector(getUserAuthData);
-    // const routes = useMemo(() => {
-    //     return Object.values(routeConfig).filter(route => {
-    //         if(route.athOnly && !isAuth) {
-    //             return false
-    //         }
-    //         return true
-    //     }
-    //     )
-    // }, [isAuth])
-
     return (
         <Routes>
             {Object.values(routeConfig).map(renderWithWrapper)}
-
-            {/* {routes.map(({ element, path }) => ( */}
-            {/*    <Route */}
-            {/*        key={path} */}
-            {/*        path={path} */}
-            {/*        element={( */}
-            {/*            <Suspense fallback={<PageLoader />}> */}
-            {/*                <div className="page-wrapper"> */}
-            {/*                    {element} */}
-            {/*                </div> */}
-            {/*            </Suspense> */}
-            {/*        )} */}
-            {/*    /> */}
-            {/* ))} */}
         </Routes>
     );
 };
