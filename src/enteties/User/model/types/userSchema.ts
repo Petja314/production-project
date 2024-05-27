@@ -4,7 +4,8 @@ export interface User {
 }
 
 export interface UserSchema {
-    username: string
-    password : string
-    authData : any
+    // username?: string
+    // password? : string
+    authData? : User
+    _mounted : boolean
 }
