@@ -1,6 +1,8 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Counter } from 'enteties/Counter';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import axios from 'axios';
 
 const MainPage = memo(() => {
     const { t } = useTranslation();
