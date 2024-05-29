@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Skeleton } from './Skeleton';
+import Skeleton from 'shared/ui/Skeleton/Skeleton';
 
 export default {
     title: 'shared/Skeleton',
