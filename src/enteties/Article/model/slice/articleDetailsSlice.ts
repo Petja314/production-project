@@ -10,28 +10,27 @@ const initialState: ArticleDetailsSchema = {
 };
 
 export const articleDetailsSlice = createSlice({
-    name: 'article',
+    name: 'articleDetails',
     initialState,
-    reducers: {
-        setUsername: (state, action: PayloadAction<string>) => {
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticleByIdThunk.pending, (state, action: PayloadAction<any>) => {
+            .addCase(fetchArticleByIdThunk.pending, (state) => {
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleByIdThunk.fulfilled, (state, action: PayloadAction<Article>) => {
+            .addCase(fetchArticleByIdThunk.fulfilled, (
+                state,
+                action: PayloadAction<Article>,
+            ) => {
                 state.isLoading = false;
-                state.data = action.payload
+                state.data = action.payload;
             })
-            .addCase(fetchArticleByIdThunk.rejected, (state, action: PayloadAction<any>) => {
+            .addCase(fetchArticleByIdThunk.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             });
     },
-
 });
 
 export const { actions: articleActions } = articleDetailsSlice;

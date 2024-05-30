@@ -15,6 +15,8 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { ArticleCodeBlockComponent } from 'enteties/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from 'enteties/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from 'enteties/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { useParams } from 'react-router-dom';
+import { StateSchema } from 'app/StoreProvider';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/articles';
 import { articleReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss'
@@ -25,38 +27,34 @@ interface ArticleDetailsProps {
 }
 
 const reducers: ReducersList = {
-    article: articleReducer
+    articleDetails: articleReducer
 }
-export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
+export const ArticleDetails = memo((props: ArticleDetailsProps) => {
+    const { className, id } = props;
     const { t } = useTranslation();
-    const dispatch = useAppDispatch()
-    const isLoading = useSelector(getArticleDetailsIsLoading)
-    // const isLoading = true
-    const article = useSelector(getArticleDetailsData)
-    const error = useSelector(getArticleDetailsError)
+    const dispatch = useAppDispatch();
+    const isLoading = useSelector(getArticleDetailsIsLoading);
+    const article = useSelector(getArticleDetailsData);
+    const error = useSelector(getArticleDetailsError);
 
-    useEffect(() => {
-        dispatch(fetchArticleByIdThunk(id))
-    }, [dispatch, id])
-
-    const renderBlock = useCallback((block : ArticleBlock) => {
+    const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
         case ArticleBlockType.CODE:
             return (
                 <ArticleCodeBlockComponent
                     key={block.id}
-                    className={cls.block}
                     block={block}
+                    className={cls.block}
                 />
-            )
+            );
         case ArticleBlockType.IMAGE:
             return (
                 <ArticleImageBlockComponent
                     key={block.id}
-                    className={cls.block}
                     block={block}
+                    className={cls.block}
                 />
-            )
+            );
         case ArticleBlockType.TEXT:
             return (
                 <ArticleTextBlockComponent
@@ -64,60 +62,64 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                     className={cls.block}
                     block={block}
                 />
-            )
-        default: return null;
+            );
+        default:
+            return null;
         }
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleByIdThunk(id));
+        }
+    }, [dispatch, id]);
 
     let content;
-    if(isLoading) {
-        content = (
-            <div>
-                <Skeleton className={cls.avatar} height={200} width={200} border="50%" />
-                <Skeleton className={cls.title} height={30} width={670} />
-                <Skeleton className={cls.skeleton} height={30} width={340} />
-                <Skeleton className={cls.skeleton} height={230} width={1090} />
-                <Skeleton className={cls.skeleton} height={230} width={1090} />
-            </div>
 
-        )
-    }else if (error) {
+    if (isLoading) {
+        content = (
+            <>
+                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                <Skeleton className={cls.title} width={300} height={32} />
+                <Skeleton className={cls.skeleton} width={600} height={24} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
+            </>
+        );
+    } else if (error) {
         content = (
             <Text
                 align={TextAlign.CENTER}
-                title="Произошла ошибка при загрузке статьи "
-                // text={}
+                title={t('Произошла ошибка при загрузке статьи.')}
             />
-        )
+        );
     } else {
         content = (
-            <div>
+            <>
                 <div className={cls.avatarWrapper}>
                     <Avatar
-                        src={article?.img}
                         size={200}
+                        src={article?.img}
                         className={cls.avatar}
                     />
                 </div>
                 <Text
-                    size={TextSize.L}
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}
+                    size={TextSize.L}
                 />
                 <div className={cls.articleInfo}>
-                    <Icon Svg={EyeIcon} className={cls.icon} />
+                    <Icon className={cls.icon} Svg={EyeIcon} />
                     <Text text={String(article?.views)} />
                 </div>
-
                 <div className={cls.articleInfo}>
-                    <Icon Svg={CalendarIcon} className={cls.icon} />
+                    <Icon className={cls.icon} Svg={CalendarIcon} />
                     <Text text={article?.createdAt} />
                 </div>
-                {article?.blocks.map(renderBlock)}
-            </div>
-
-        )
+                {article?.blocks && article?.blocks.map(renderBlock)}
+            </>
+        );
     }
 
     return (
@@ -126,6 +128,5 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                 {content}
             </div>
         </DynamicModuleLoader>
-
     );
 });

@@ -15,7 +15,7 @@ describe('article details selectors tests.test', () => {
             type: [ArticleType.IT],
         }
         const state : DeepPartial<StateSchema> = {
-            article: {
+            articleDetails: {
                 data
             },
         };
@@ -24,7 +24,7 @@ describe('article details selectors tests.test', () => {
 
     test('getArticleDetailsIsLoading', () => {
         const state : DeepPartial<StateSchema> = {
-            article: {
+            articleDetails: {
                 isLoading: true
             },
         };
@@ -33,7 +33,7 @@ describe('article details selectors tests.test', () => {
 
     test('getArticleDetailsError', () => {
         const state : DeepPartial<StateSchema> = {
-            article: {
+            articleDetails: {
                 error: 'error'
 
             },
