@@ -11,6 +11,7 @@ import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/Profil
 import { getProfileForm } from 'enteties/Profile/model/selectors/getProfileForm/getProfileForm';
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateProfileError } from 'enteties/Profile/model/types/Profile';
+import { useParams } from 'react-router-dom';
 import cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
@@ -23,6 +24,7 @@ interface ProfilePageProps {
 
 const ProfilePage = memo(({ className } : ProfilePageProps) => {
     const { t } = useTranslation();
+    const { id } = useParams<{ id: string }>()
     const formData = useSelector(getProfileForm);
     const data = useSelector(getProfileData);
     const error = useSelector(getProfileError);
@@ -40,9 +42,9 @@ const ProfilePage = memo(({ className } : ProfilePageProps) => {
 
     useEffect(() => {
         if(__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileDataThunk());
+            dispatch(fetchProfileDataThunk(id));
         }
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     const onChangeFirstName = useCallback((value? : string) => {
         dispatch(profileActions.updateProfile({ name: value || '' }));
