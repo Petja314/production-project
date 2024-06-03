@@ -1,14 +1,14 @@
-import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Article, ArticleList } from 'enteties/Article';
+import React from 'react';
 import { ArticleView } from 'enteties/Article/model/types/articles';
-import cls from './ArticlesPage.module.scss'
+import { ArticleListItem } from './ArticleListItem';
 
-interface ArticlesPageProps {
-    className?: string
-
-}
+export default {
+    title: 'enteties/Article/ArticleListItem',
+    component: ArticleListItem,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+};
 
 const article = {
     id: '1',
@@ -93,25 +93,16 @@ const article = {
     ]
 } as any
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-    const { t } = useTranslation();
+const Template = (args: any) => <ArticleListItem {...args} />;
 
-    const mockedArticlesArray = new Array(16)
-        .fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index)
-        }))
-    console.log('mockedArticlesArray', mockedArticlesArray)
-    return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            <ArticleList
-                // isLoading={isLoading}
-                view={ArticleView.LIST}
-                article={mockedArticlesArray}
-            />
-        </div>
-    );
+export const ArticleListItemGRID = Template.bind({});
+ArticleListItemGRID.args = {
+    article,
+    view: ArticleView.GRID
 };
 
-export default memo(ArticlesPage)
+export const ArticleListItemLIST = Template.bind({});
+ArticleListItemLIST.args = {
+    article,
+    view: ArticleView.LIST
+};

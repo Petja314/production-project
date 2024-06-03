@@ -4,7 +4,6 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { SidebarItemsList } from 'widgets/Sidebar/model/Items';
 import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 import { useSelector } from 'react-redux';

@@ -1,14 +1,8 @@
-import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Article, ArticleList } from 'enteties/Article';
+import React from 'react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleView } from 'enteties/Article/model/types/articles';
-import cls from './ArticlesPage.module.scss'
-
-interface ArticlesPageProps {
-    className?: string
-
-}
+import { ArticleList } from './ArticleList';
 
 const article = {
     id: '1',
@@ -93,25 +87,47 @@ const article = {
     ]
 } as any
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-    const { t } = useTranslation();
-
-    const mockedArticlesArray = new Array(16)
-        .fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index)
-        }))
-    console.log('mockedArticlesArray', mockedArticlesArray)
-    return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            <ArticleList
-                // isLoading={isLoading}
-                view={ArticleView.LIST}
-                article={mockedArticlesArray}
-            />
-        </div>
-    );
+export default {
+    title: 'enteties/Article/ArticleList',
+    component: ArticleList,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 };
 
-export default memo(ArticlesPage)
+const Template = (args: any) => <ArticleList {...args} />;
+
+const mockedArticlesArray = new Array(16)
+    .fill(0)
+    .map((item, index) => ({
+        ...article,
+        id: String(index)
+    }))
+
+export const ListArticleGrid = Template.bind({});
+ListArticleGrid.args = {
+    view: ArticleView.GRID,
+    article: mockedArticlesArray,
+    isLoading: false
+};
+
+export const ListArticleGridLoading = Template.bind({});
+ListArticleGridLoading.args = {
+    view: ArticleView.GRID,
+    article,
+    isLoading: true
+};
+
+export const ListArticleAsLIST = Template.bind({});
+ListArticleAsLIST.args = {
+    view: ArticleView.LIST,
+    article: mockedArticlesArray,
+    isLoading: false
+};
+
+export const ListArticleAsLISTLoading = Template.bind({});
+ListArticleAsLISTLoading.args = {
+    view: ArticleView.LIST,
+    article,
+    isLoading: true
+};

@@ -1,5 +1,6 @@
 // Components
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
+export { ArticleList } from './ui/ArticleList/ArticleList'
 
 // Types
 export type { Article } from './model/types/articles'
