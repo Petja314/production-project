@@ -15,11 +15,11 @@ interface ArticleListProps {
 }
 
 export const ArticleList = memo(({
-    className, article, isLoading = true, view
+    className, article, isLoading, view
 }: ArticleListProps) => {
     const { t } = useTranslation();
 
-    console.log('ArticleList isLoading > ', isLoading)
+    // console.log('ArticleList isLoading > ', isLoading)
     if(isLoading) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>

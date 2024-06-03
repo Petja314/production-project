@@ -10,3 +10,4 @@ export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
 
 // Selectors
 export { getArticleDetailsData, getArticleDetailsIsLoading, getArticleDetailsError } from './model/selectors/articleDetailsSelector'
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'

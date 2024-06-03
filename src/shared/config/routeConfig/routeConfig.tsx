@@ -4,7 +4,7 @@ import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
-import ArticlesPage from 'pages/ArticlesPage/ui/ArticlesPage/ArticlesPage';
+import ArticlesPage from 'pages/ArticlesPage/ui/ArticlesPage/ui/ArticlesPage';
 import ArticlesDetailsPage from 'pages/ArticlesDetailsPage/ui/ArticlesDetailsPage/ArticlesDetailsPage';
 
 export type AppRoutesProps = RouteProps & {
