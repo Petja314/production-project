@@ -13,26 +13,17 @@ interface ArticleListProps {
     isLoading? : boolean
     view? : ArticleView
 }
+const getSkeleton = (view: ArticleView) => new Array(view === ArticleView.LIST ? 4 : 10)
+    .fill(0)
+    .map((item, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+    ));
 
 export const ArticleList = memo(({
     className, article, isLoading, view
 }: ArticleListProps) => {
     const { t } = useTranslation();
-
-    // console.log('ArticleList isLoading > ', isLoading)
-    if(isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {new Array(view === ArticleView.GRID ? 9 : 3)
-                    .fill(0)
-                    .map((item, index) => (
-                        // eslint-disable-next-line react/no-array-index-key
-                        <ArticleListItemSkeleton view={view} key={index} />
-                    ))}
-            </div>
-        )
-    }
-
     const renderArticle = (article : Article) => {
         return (
             <ArticleListItem
@@ -50,6 +41,7 @@ export const ArticleList = memo(({
             ) : (
                 null
             )}
+            {isLoading && getSkeleton(view)}
         </div>
     );
 });

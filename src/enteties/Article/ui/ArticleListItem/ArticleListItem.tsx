@@ -35,15 +35,14 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
             <Icon Svg={Eye} />
         </>
     )
-
     if(view === ArticleView.LIST) {
         const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
         return (
             <div className={classNames(cls.LIST, {}, [className, cls[view]])}>
                 <Card className={cls.card}>
                     <div className={cls.header}>
-                        <Avatar src={article.user.avatar} size={50} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Avatar src={article?.user.avatar} size={50} />
+                        <Text text={article?.user.username} className={cls.username} />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <Text text={article.title} size={TextSize.L} className={cls.title} />

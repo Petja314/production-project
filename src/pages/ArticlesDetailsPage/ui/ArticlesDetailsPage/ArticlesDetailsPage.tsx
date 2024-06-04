@@ -13,6 +13,7 @@ import { CommentList } from 'enteties/Comment';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { addCommentForArticleThunk } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cls from './ArticlesDetailsPage.module.scss'
 
@@ -55,7 +56,7 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button theme={ThemeButton.OUTLINED} onClick={onBackToList}>
                     {t('Назад к списку')}
                 </Button>
@@ -72,7 +73,7 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
                     comments={comments}
                 />
 
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

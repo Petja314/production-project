@@ -12,6 +12,7 @@ import { getProfileForm } from 'enteties/Profile/model/selectors/getProfileForm/
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateProfileError } from 'enteties/Profile/model/types/Profile';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
@@ -82,7 +83,7 @@ const ProfilePage = memo(({ className } : ProfilePageProps) => {
     // console.log('form data > ', formData)
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ProfilePage, {}, [className])}>
+            <Page className={classNames(cls.ProfilePage, {}, [className])}>
                 <h1>Profile page</h1>
                 <ProfilePageHeader />
 
@@ -108,7 +109,7 @@ const ProfilePage = memo(({ className } : ProfilePageProps) => {
                     />
                 ))}
 
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

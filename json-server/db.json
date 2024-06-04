@@ -14,6 +14,550 @@
   "articles": [
     {
       "id": "1",
+      "title": "JavaScript Fundamentals",
+      "subtitle": "What’s new in JavaScript for 2023?",
+      "img": "https://via.placeholder.com/150",
+      "views": 1500,
+      "createdAt": "01.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to JavaScript",
+          "paragraphs": [
+            "JavaScript is a versatile programming language used for web development.",
+            "It can be used both on the client-side and server-side."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "console.log('Hello, World!');"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "JavaScript Logo"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Python Tips",
+      "subtitle": "Advanced Python techniques for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1022,
+      "createdAt": "02.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Python Tips and Tricks",
+          "paragraphs": [
+            "Python is known for its simplicity and readability.",
+            "Learn advanced techniques to enhance your Python skills."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "def hello_world():\n    print('Hello, World!')"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Python Logo"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Understanding React",
+      "subtitle": "React best practices in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1300,
+      "createdAt": "03.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "React Basics",
+          "paragraphs": [
+            "React is a JavaScript library for building user interfaces.",
+            "It allows for the creation of reusable UI components."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import React from 'react';\n\nconst App = () => <h1>Hello, World!</h1>;"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "React Logo"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Diving into Node.js",
+      "subtitle": "Node.js updates and tips for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 900,
+      "createdAt": "04.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Node.js",
+          "paragraphs": [
+            "Node.js is a runtime environment that allows you to run JavaScript on the server.",
+            "It is built on Chrome's V8 JavaScript engine."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const http = require('http');\n\nconst server = http.createServer((req, res) => {\n    res.statusCode = 200;\n    res.setHeader('Content-Type', 'text/plain');\n    res.end('Hello, World!\\n');\n});\n\nserver.listen(3000, '127.0.0.1', () => {\n    console.log('Server running at http://127.0.0.1:3000/');\n});"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Node.js Logo"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Exploring TypeScript",
+      "subtitle": "TypeScript features and benefits in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1100,
+      "createdAt": "05.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Why TypeScript?",
+          "paragraphs": [
+            "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
+            "It offers type checking and better tooling for large codebases."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const add = (a: number, b: number): number => a + b;\n\nconsole.log(add(5, 3));"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "TypeScript Logo"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "CSS Tricks",
+      "subtitle": "Modern CSS techniques for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 800,
+      "createdAt": "06.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "CSS Grid and Flexbox",
+          "paragraphs": [
+            "CSS Grid and Flexbox are powerful layout systems.",
+            "They enable responsive and complex web designs."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": ".container {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 10px;\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "CSS Grid Example"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Machine Learning Basics",
+      "subtitle": "Getting started with machine learning in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1200,
+      "createdAt": "07.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Machine Learning",
+          "paragraphs": [
+            "Machine learning is a subset of artificial intelligence that focuses on building systems that learn from data.",
+            "It is widely used in various applications such as recommendation systems, image recognition, and more."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "from sklearn.ensemble import RandomForestClassifier\n\nclf = RandomForestClassifier()\nclf.fit(X_train, y_train)\npredictions = clf.predict(X_test)"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Machine Learning Concept"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Django for Web Development",
+      "subtitle": "Leveraging Django for rapid web development in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 950,
+      "createdAt": "08.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with Django",
+          "paragraphs": [
+            "Django is a high-level Python web framework that enables rapid development of secure and maintainable websites.",
+            "It follows the 'batteries-included' philosophy, providing everything you need to build web applications out of the box."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "from django.shortcuts import render\n\n# Create your views here.\ndef home(request):\n    return render(request, 'home.html')"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Django Logo"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Understanding Docker",
+      "subtitle": "Docker for containerization and deployment in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1100,
+      "createdAt": "09.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Docker Basics",
+          "paragraphs": [
+            "Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.",
+            "Containers allow developers to package an application with all of its parts and dependencies."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "docker build -t myapp .\ndocker run -p 4000:4000 myapp"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Docker Logo"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "GraphQL Explained",
+      "subtitle": "Using GraphQL for efficient data fetching in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1250,
+      "createdAt": "10.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to GraphQL",
+          "paragraphs": [
+            "GraphQL is a query language for APIs and a runtime for executing those queries by using a type system you define for your data.",
+            "It provides a more efficient, powerful, and flexible alternative to REST."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "query {\n    user(id: \"1\") {\n        name\n        age\n    }\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "GraphQL Logo"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Kubernetes for Orchestration",
+      "subtitle": "Managing containerized applications with Kubernetes in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1350,
+      "createdAt": "11.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Kubernetes Basics",
+          "paragraphs": [
+            "Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.",
+            "It groups containers that make up an application into logical units for easy management and discovery."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "kubectl create deployment nginx --image=nginx\nkubectl expose deployment nginx --port=80 --type=LoadBalancer"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Kubernetes Logo"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Vue.js for Beginners",
+      "subtitle": "Getting started with Vue.js in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 900,
+      "createdAt": "12.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Vue.js",
+          "paragraphs": [
+            "Vue.js is a progressive JavaScript framework for building user interfaces.",
+            "It is designed to be incrementally adaptable and focuses on the view layer only."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "new Vue({\n    el: '#app',\n    data: {\n        message: 'Hello Vue!'\n    }\n})"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Vue.js Logo"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Go Programming Language",
+      "subtitle": "Why Go is great for modern software development in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1150,
+      "createdAt": "13.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Go",
+          "paragraphs": [
+            "Go, also known as Golang, is a statically typed, compiled programming language designed for simplicity and efficiency.",
+            "It is particularly well-suited for building web servers and distributed systems."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Go Logo"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Ruby on Rails",
+      "subtitle": "Building web applications with Ruby on Rails in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1050,
+      "createdAt": "14.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with Ruby on Rails",
+          "paragraphs": [
+            "Ruby on Rails, or Rails, is a server-side web application framework written in Ruby.",
+            "It follows the model-view-controller (MVC) architecture and emphasizes convention over configuration."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "rails new myapp\ncd myapp\nrails server"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Ruby on Rails Logo"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Elixir for Concurrent Systems",
+      "subtitle": "Leveraging Elixir for scalable and maintainable applications in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 950,
+      "createdAt": "15.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Elixir",
+          "paragraphs": [
+            "Elixir is a dynamic, functional language designed for building scalable and maintainable applications.",
+            "It runs on the Erlang VM, known for its ability to handle large numbers of concurrent connections."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "defmodule Hello do\n    def world do\n        IO.puts \"Hello, World!\"\n    end\nend"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Elixir Logo"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Rust for System Programming",
+      "subtitle": "Why Rust is a great choice for system-level programming in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 980,
+      "createdAt": "16.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Rust",
+          "paragraphs": [
+            "Rust is a systems programming language that provides memory safety without using garbage collection.",
+            "It is designed for performance and safety, particularly safe concurrency."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "fn main() {\n    println!(\"Hello, World!\");\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Rust Logo"
+        }
+      ]
+    },
+    {
+      "id": "17",
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
@@ -58,37 +602,14 @@
           "id": "3",
           "type": "CODE",
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
-          ]
         }
       ]
     },
     {
-      "id": "2",
+      "id": "18",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BF8l33vU2D0uFaqtdV5ullV7adyOIoRtLw&s",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -130,40 +651,17 @@
           "id": "3",
           "type": "CODE",
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
-          ]
         }
       ]
     },
     {
-      "id": "3",
+      "id": "19",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "userId": "1",
+      "userId": "2",
       "type": [
         "IT"
       ],
@@ -202,29 +700,890 @@
           "id": "3",
           "type": "CODE",
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Diving into Node.js",
+      "subtitle": "Node.js updates and tips for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 900,
+      "createdAt": "04.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
         {
-          "id": "7",
+          "id": "1",
           "type": "TEXT",
-          "title": "Заголовок этого блока",
+          "title": "Introduction to Node.js",
           "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+            "Node.js is a runtime environment that allows you to run JavaScript on the server.",
+            "It is built on Chrome's V8 JavaScript engine."
           ]
         },
         {
-          "id": "8",
+          "id": "2",
+          "type": "CODE",
+          "code": "const http = require('http');\n\nconst server = http.createServer((req, res) => {\n    res.statusCode = 200;\n    res.setHeader('Content-Type', 'text/plain');\n    res.end('Hello, World!\\n');\n});\n\nserver.listen(3000, '127.0.0.1', () => {\n    console.log('Server running at http://127.0.0.1:3000/');\n});"
+        },
+        {
+          "id": "3",
           "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
+          "src": "https://via.placeholder.com/200",
+          "title": "Node.js Logo"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "title": "Exploring TypeScript",
+      "subtitle": "TypeScript features and benefits in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1100,
+      "createdAt": "05.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Why TypeScript?",
+          "paragraphs": [
+            "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
+            "It offers type checking and better tooling for large codebases."
+          ]
         },
         {
-          "id": "9",
+          "id": "2",
+          "type": "CODE",
+          "code": "const add = (a: number, b: number): number => a + b;\n\nconsole.log(add(5, 3));"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "TypeScript Logo"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "title": "CSS Tricks",
+      "subtitle": "Modern CSS techniques for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 800,
+      "createdAt": "06.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
           "type": "TEXT",
-          "title": "Заголовок этого блока",
+          "title": "CSS Grid and Flexbox",
           "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
+            "CSS Grid and Flexbox are powerful layout systems.",
+            "They enable responsive and complex web designs."
           ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": ".container {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 10px;\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "CSS Grid Example"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "title": "JavaScript Fundamentals",
+      "subtitle": "What’s new in JavaScript for 2023?",
+      "img": "https://via.placeholder.com/150",
+      "views": 1500,
+      "createdAt": "01.01.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to JavaScript",
+          "paragraphs": [
+            "JavaScript is a versatile programming language used for web development.",
+            "It can be used both on the client-side and server-side."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "console.log('Hello, World!');"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "JavaScript Logo"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "title": "Python Tips",
+      "subtitle": "Advanced Python techniques for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1022,
+      "createdAt": "02.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Python Tips and Tricks",
+          "paragraphs": [
+            "Python is known for its simplicity and readability.",
+            "Learn advanced techniques to enhance your Python skills."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "def hello_world():\n    print('Hello, World!')"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Python Logo"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "title": "Understanding React",
+      "subtitle": "React best practices in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1300,
+      "createdAt": "03.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "React Basics",
+          "paragraphs": [
+            "React is a JavaScript library for building user interfaces.",
+            "It allows for the creation of reusable UI components."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import React from 'react';\n\nconst App = () => <h1>Hello, World!</h1>;"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "React Logo"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "title": "Advanced JavaScript Patterns",
+      "subtitle": "Exploring design patterns in JavaScript for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1200,
+      "createdAt": "17.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "JavaScript Design Patterns",
+          "paragraphs": [
+            "Design patterns are typical solutions to commonly occurring problems in software design.",
+            "They are like pre-made blueprints that you can customize to solve a recurring design problem in your code."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "class Singleton {\n    constructor() {\n        if (!Singleton.instance) {\n            Singleton.instance = this;\n        }\n        return Singleton.instance;\n    }\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "JavaScript Patterns"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "title": "Building REST APIs with Express",
+      "subtitle": "Create efficient RESTful APIs using Express.js in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1400,
+      "createdAt": "18.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with Express.js",
+          "paragraphs": [
+            "Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications.",
+            "It facilitates the rapid development of Node-based web applications."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.get('/', (req, res) => {\n  res.send('Hello World!');\n});\n\napp.listen(port, () => {\n  console.log(`Example app listening at http://localhost:${port}`);\n});"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Express.js"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "title": "Introduction to GraphQL",
+      "subtitle": "Learn the basics of GraphQL in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1300,
+      "createdAt": "19.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "What is GraphQL?",
+          "paragraphs": [
+            "GraphQL is a query language for your API, and a server-side runtime for executing queries by using a type system you define for your data.",
+            "GraphQL isn't tied to any specific database or storage engine and is instead backed by your existing code and data."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "query {\n  user(id: 1) {\n    name\n    age\n  }\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "GraphQL"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "title": "Developing with Angular",
+      "subtitle": "Modern web development with Angular in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1100,
+      "createdAt": "20.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Angular",
+          "paragraphs": [
+            "Angular is a platform and framework for building single-page client applications using HTML and TypeScript.",
+            "Angular is written in TypeScript and provides a standard structure for developers to work with."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  template: '<h1>Hello, Angular!</h1>',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Angular"
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "title": "Building Mobile Apps with Flutter",
+      "subtitle": "Create beautiful mobile apps using Flutter in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1250,
+      "createdAt": "21.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with Flutter",
+          "paragraphs": [
+            "Flutter is an open-source UI software development kit created by Google.",
+            "It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import 'package:flutter/material.dart';\n\nvoid main() => runApp(MyApp());\n\nclass MyApp extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      home: Scaffold(\n        appBar: AppBar(\n          title: Text('Hello Flutter'),\n        ),\n        body: Center(\n          child: Text('Hello, World!'),\n        ),\n      ),\n    );\n  }\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Flutter"
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "title": "Introduction to Rust",
+      "subtitle": "Why Rust is becoming a popular language in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1150,
+      "createdAt": "22.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "What is Rust?",
+          "paragraphs": [
+            "Rust is a multi-paradigm, general-purpose programming language designed for performance and safety, especially safe concurrency.",
+            "Rust is syntactically similar to C++, but it provides memory safety without using garbage collection."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "fn main() {\n  println!(\"Hello, Rust!\");\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Rust"
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "title": "Getting Started with Kotlin",
+      "subtitle": "Learn Kotlin for Android development in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 980,
+      "createdAt": "23.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Kotlin",
+          "paragraphs": [
+            "Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference.",
+            "It is designed to interoperate fully with Java, and the JVM version of Kotlin's standard library depends on the Java Class Library."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "fun main() {\n  println(\"Hello, Kotlin!\")\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Kotlin"
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "title": "Building Microservices with Spring Boot",
+      "subtitle": "Developing microservices using Spring Boot in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1350,
+      "createdAt": "24.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with Spring Boot",
+          "paragraphs": [
+            "Spring Boot is an open-source Java-based framework used to create microservices.",
+            "It is developed by Pivotal Team and is used to build stand-alone and production-ready spring applications."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication\npublic class MyApplication {\n  public static void main(String[] args) {\n    SpringApplication.run(MyApplication.class, args);\n  }\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Spring Boot"
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "title": "Exploring Next.js",
+      "subtitle": "Server-side rendering with Next.js in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1450,
+      "createdAt": "25.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Next.js",
+          "paragraphs": [
+            "Next.js is a React framework that enables several extra features, including server-side rendering and generating static websites.",
+            "It is built on top of Node.js and enables React-based web applications with server-side rendering capabilities."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import React from 'react';\n\nconst Home = () => {\n  return <h1>Hello, Next.js!</h1>;\n};\n\nexport default Home;"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Next.js"
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "title": "Introduction to Swift",
+      "subtitle": "Developing iOS apps with Swift in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1000,
+      "createdAt": "26.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with Swift",
+          "paragraphs": [
+            "Swift is a powerful and intuitive programming language for iOS, macOS, watchOS, and tvOS.",
+            "Writing Swift code is interactive and fun, the syntax is concise yet expressive, and Swift includes modern features developers love."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import SwiftUI\n\nstruct ContentView: View {\n  var body: some View {\n    Text(\"Hello, Swift!\")\n  }\n}"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Swift"
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "title": "Using TensorFlow for Machine Learning",
+      "subtitle": "Implementing machine learning models with TensorFlow in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1500,
+      "createdAt": "27.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to TensorFlow",
+          "paragraphs": [
+            "TensorFlow is an end-to-end open-source platform for machine learning.",
+            "It has a comprehensive, flexible ecosystem of tools, libraries, and community resources that lets researchers push the state-of-the-art in ML, and developers easily build and deploy ML-powered applications."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import tensorflow as tf\n\n# Create a constant tensor\nhello = tf.constant('Hello, TensorFlow!')\n\n# Start a TensorFlow session\nwith tf.Session() as sess:\n  print(sess.run(hello))"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "TensorFlow"
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "title": "Introduction to PostgreSQL",
+      "subtitle": "Advanced database management with PostgreSQL in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1050,
+      "createdAt": "28.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with PostgreSQL",
+          "paragraphs": [
+            "PostgreSQL is a powerful, open-source object-relational database system.",
+            "It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  name VARCHAR(100),\n  email VARCHAR(100)\n);"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "title": "Introduction to Vue.js 3",
+      "subtitle": "New features and updates in Vue.js 3 for 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1100,
+      "createdAt": "29.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "What's New in Vue.js 3?",
+          "paragraphs": [
+            "Vue.js 3 is the latest version of the popular progressive framework for building user interfaces.",
+            "It introduces several new features and improvements, including a new composition API, improved performance, and better TypeScript support."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "import { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Vue.js 3"
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "title": "Serverless Applications with AWS Lambda",
+      "subtitle": "Building scalable applications with AWS Lambda in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1250,
+      "createdAt": "30.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Getting Started with AWS Lambda",
+          "paragraphs": [
+            "AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers.",
+            "You pay only for the compute time you consume - there is no charge when your code is not running."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "exports.handler = async (event) => {\n  const response = {\n    statusCode: 200,\n    body: JSON.stringify('Hello from Lambda!'),\n  };\n  return response;\n};"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "AWS Lambda"
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "title": "Introduction to WebAssembly",
+      "subtitle": "Enhancing web performance with WebAssembly in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1400,
+      "createdAt": "31.01.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "What is WebAssembly?",
+          "paragraphs": [
+            "WebAssembly (Wasm) is a binary instruction format for a stack-based virtual machine.",
+            "It is designed to be a portable compilation target for programming languages, enabling deployment on the web for client and server applications."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "(module\n  (func $add (param $lhs i32) (param $rhs i32) (result i32)\n    local.get $lhs\n    local.get $rhs\n    i32.add)\n  (export \"add\" (func $add)))"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "WebAssembly"
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "title": "Getting Started with Clojure",
+      "subtitle": "Introduction to functional programming with Clojure in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 950,
+      "createdAt": "01.02.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Clojure",
+          "paragraphs": [
+            "Clojure is a dynamic, general-purpose programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming.",
+            "Clojure is a compiled language - it compiles directly to JVM bytecode, yet remains completely dynamic."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "(defn hello-world []\n  (println \"Hello, World!\"))"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Clojure"
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "title": "Getting Started with Svelte",
+      "subtitle": "Learn Svelte for building web applications in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1300,
+      "createdAt": "02.02.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Svelte",
+          "paragraphs": [
+            "Svelte is a radical new approach to building user interfaces.",
+            "Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "<script>\n  let name = 'world';\n</script>\n\n<h1>Hello {name}!</h1>"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Svelte"
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "title": "Introduction to Julia",
+      "subtitle": "Why Julia is great for numerical computing in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1200,
+      "createdAt": "03.02.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "What is Julia?",
+          "paragraphs": [
+            "Julia is a high-level, high-performance programming language for technical computing.",
+            "It is designed for computational science and numerical analysis."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "println(\"Hello, Julia!\")"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Julia"
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "title": "Functional Programming with Haskell",
+      "subtitle": "Explore functional programming paradigms with Haskell in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1100,
+      "createdAt": "04.02.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Haskell",
+          "paragraphs": [
+            "Haskell is a purely functional programming language.",
+            "It is known for its rich type system and mathematical rigor."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "main = putStrLn \"Hello, Haskell!\""
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Haskell"
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "title": "Using Bash for Automation",
+      "subtitle": "Automate your tasks with Bash scripts in 2023",
+      "img": "https://via.placeholder.com/150",
+      "views": 1000,
+      "createdAt": "05.02.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Bash Scripting",
+          "paragraphs": [
+            "Bash is a Unix shell and command language.",
+            "Writing scripts in Bash can automate a wide range of tasks."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "#!/bin/bash\n\necho \"Hello, Bash!\""
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://via.placeholder.com/200",
+          "title": "Bash"
         }
       ]
     }
@@ -277,6 +1636,18 @@
       "userId": "1",
       "text": "Privet mir!",
       "id": "CDxzNNt"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "Hello world!",
+      "id": "mPuPc7-"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "first comment",
+      "id": "WWKnFRF"
     }
   ],
   "users": [

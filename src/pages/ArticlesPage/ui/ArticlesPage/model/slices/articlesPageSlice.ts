@@ -5,23 +5,26 @@ import { ArticlesPageCommentsSchema } from 'pages/ArticlesPage/ui/ArticlesPage/m
 import { Article } from 'enteties/Article';
 import { ARTICLE_LIST_STYLE_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { ArticleView } from 'enteties/Article/model/types/articles';
-import { fetchArticleListThunk } from '../services/fetchArticleListThunk';
+import { fetchArticleListThunk } from '../services/fetchArticleList/fetchArticleListThunk';
 
 // ADAPTER
-const commentsAdapter = createEntityAdapter<Article>({
+const articleAdapter = createEntityAdapter<Article>({
     selectId: (comment) => comment.id,
 });
 
 // SELECTORS
-export const getArticlesPageSlice = commentsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleList || commentsAdapter.getInitialState()
+export const getArticlesPageSlice = articleAdapter.getSelectors<StateSchema>(
+    (state) => state.articleList || articleAdapter.getInitialState()
 );
 export const articlesPageSlice = createSlice({
     name: 'articlesPageSlice',
-    initialState: commentsAdapter.getInitialState<ArticlesPageCommentsSchema>({
+    initialState: articleAdapter.getInitialState<ArticlesPageCommentsSchema>({
         isLoading: false,
         error: undefined,
         view: undefined,
+        page: 1,
+        limit: 10,
+        hasMore: true,
         ids: [],
         entities: {}
     }),
@@ -30,8 +33,13 @@ export const articlesPageSlice = createSlice({
             state.view = action.payload
             localStorage.setItem(ARTICLE_LIST_STYLE_LOCALSTORAGE_KEY, action.payload)
         },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload
+        },
         initViewState: (state) => {
-            state.view = localStorage.getItem(ARTICLE_LIST_STYLE_LOCALSTORAGE_KEY) as ArticleView
+            const view = localStorage.getItem(ARTICLE_LIST_STYLE_LOCALSTORAGE_KEY) as ArticleView
+            state.view = view
+            state.limit = view === ArticleView.LIST ? 4 : 10
         }
     },
     extraReducers: (builder) => {
@@ -41,7 +49,8 @@ export const articlesPageSlice = createSlice({
             })
             .addCase(fetchArticleListThunk.fulfilled, (state, action: PayloadAction<Article[]>) => {
                 state.isLoading = false;
-                commentsAdapter.setAll(state, action.payload)
+                articleAdapter.addMany(state, action.payload)
+                state.hasMore = action.payload.length > 0
             })
             .addCase(fetchArticleListThunk.rejected, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
