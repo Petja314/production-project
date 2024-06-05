@@ -12,7 +12,7 @@ import { getProfileForm } from 'enteties/Profile/model/selectors/getProfileForm/
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateProfileError } from 'enteties/Profile/model/types/Profile';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {

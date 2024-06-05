@@ -10,7 +10,8 @@ export interface ArticlesPageCommentsSchema extends EntityState<Article>{
     // pagination
     page : number,
     limit : number,
-    hasMore: boolean
+    hasMore: boolean,
+    _inited : boolean
     // ids: [],
     // entities: {}
 }

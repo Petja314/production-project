@@ -13,27 +13,33 @@ import { ArticleDetailsSchema } from 'enteties/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageCommentsSchema } from 'pages/ArticlesPage';
+import { ScrollSaverSchema } from 'features/ScrollSaver';
 
 export interface StateSchema {
     counter: CounterSchema,
     user: UserSchema,
+    scrollSaver : ScrollSaverSchema,
+
     // Async reducers
     login? : LoginSchema
     profile? : ProfileSchema,
     articleDetails? : ArticleDetailsSchema,
     articleDetailsComments? : ArticleDetailsCommentsSchema,
-    addCommentForm? : AddCommentFormSchema
-    articleList? : ArticlesPageCommentsSchema
+    addCommentForm? : AddCommentFormSchema,
+    articleList? : ArticlesPageCommentsSchema,
 
 }
 
 export type StateSchemaKey = keyof StateSchema
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>,
     reduce: (state : StateSchema, action : AnyAction) => CombinedState<StateSchema>,
-    add: (key : StateSchemaKey, reducer : Reducer) => void
-    remove: (key : StateSchemaKey) => void
+    add: (key : StateSchemaKey, reducer : Reducer) => void,
+    remove: (key : StateSchemaKey) => void,
+    // true - mounted, false - unmounted
+    getMountedReducers : () => MountedReducers
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

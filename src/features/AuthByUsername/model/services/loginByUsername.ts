@@ -25,7 +25,9 @@ export const loginByUsernameThunk = createAsyncThunk<User, LoginByUsernameProps,
             // After signOut data from LS will be removed!
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
+
             extra.navigate('/about');
+            // I WANNA NAVIGATE TO ('/about')
             return response.data;
         } catch (err) {
             // return thunkAPI.rejectWithValue(err.message);

@@ -13,7 +13,7 @@ import { CommentList } from 'enteties/Comment';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { addCommentForArticleThunk } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cls from './ArticlesDetailsPage.module.scss'
 
