@@ -19,7 +19,6 @@ interface CommentCardProps {
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
     const { t } = useTranslation();
     const navigate = useNavigate()
-    console.log('CommentCard comment >', comment)
     if(isLoading) {
         return (
             <div className={classNames(cls.CommentCard, {}, [className])}>

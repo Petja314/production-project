@@ -6,6 +6,4 @@ export { ArticlesDetailsPage }
 
 export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema'
 
-// Selectors
-export { getArticleCommentsIsLoading, getArticleCommentsError } from './model/selectors/comments'
-// export { addCommentForArticleThunk } from './model/services/addCommentForArticle/addCommentForArticle'
+export { ArticleDetailsPageSchema } from './model/types/index'

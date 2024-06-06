@@ -6,16 +6,16 @@ import { loginReducer } from 'features/AuthByUsername';
 import { profileReducer } from 'enteties/Profile';
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { DeepPartial } from '@reduxjs/toolkit';
-import { articleDetailsCommentsReducer } from 'pages/ArticlesDetailsPage/model/slices/articleDetailsCommentsSlice';
 import { addCommentFormReducer } from 'features/addCommentForm/module/slices/addCommentFormSlice';
 import { articleReducer } from 'enteties/Article/model/slice/articleDetailsSlice';
+import { articleDetailsPageReducer } from 'pages/ArticlesDetailsPage/model/slices';
 
 const defaultAsyncReducers : ReducersList = {
     login: loginReducer,
     profile: profileReducer,
     articleDetails: articleReducer,
-    articleDetailsComments: articleDetailsCommentsReducer,
-    addCommentForm: addCommentFormReducer
+    addCommentForm: addCommentFormReducer,
+    articleDetailsPage: articleDetailsPageReducer
 };
 
 export const StoreDecorator = (

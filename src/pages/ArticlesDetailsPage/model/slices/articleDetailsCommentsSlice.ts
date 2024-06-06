@@ -11,7 +11,7 @@ const commentsAdapter = createEntityAdapter<CommentData>({
 
 // SELECTORS
 export const getArticlesComments = commentsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsComments || commentsAdapter.getInitialState()
+    (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 );
 
 const articleDetailsCommentsSlice = createSlice({
@@ -56,5 +56,8 @@ const articleDetailsCommentsSlice = createSlice({
 export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsSlice;
 
 // Selectors for isLoading and error
-export const getArticleCommentsIsLoading = (state: StateSchema) => state.articleDetailsComments?.isLoading;
-export const getArticleCommentsError = (state: StateSchema) => state.articleDetailsComments?.error;
+// export const getArticleCommentsIsLoading = (state: StateSchema) => state.articleDetailsComments?.isLoading;
+// export const getArticleCommentsError = (state: StateSchema) => state.articleDetailsComments?.error;
+
+export const getArticleCommentsIsLoading = (state: StateSchema) => state.articleDetailsPage?.comments?.isLoading
+export const getArticleCommentsError = (state: StateSchema) => state.articleDetailsPage?.comments?.error

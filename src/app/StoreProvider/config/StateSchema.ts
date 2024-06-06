@@ -10,10 +10,10 @@ import { AxiosInstance } from 'axios';
 import { To } from 'react-router-dom';
 import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'enteties/Article';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaverSchema } from 'features/ScrollSaver';
+import { ArticleDetailsPageSchema } from 'pages/ArticlesDetailsPage';
 
 export interface StateSchema {
     counter: CounterSchema,
@@ -24,13 +24,15 @@ export interface StateSchema {
     login? : LoginSchema
     profile? : ProfileSchema,
     articleDetails? : ArticleDetailsSchema,
-    articleDetailsComments? : ArticleDetailsCommentsSchema,
+    // articleDetailsComments? : ArticleDetailsCommentsSchema,
+    // articleDetailsRecommendations? : ArticleDetailsRecommendationsSchema
     addCommentForm? : AddCommentFormSchema,
     articleList? : ArticlesPageSchema,
-
+    articleDetailsPage? : ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
+// eslint-disable-next-line no-undef
 export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {

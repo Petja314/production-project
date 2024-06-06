@@ -33,6 +33,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     // console.log('searchParams', searchParams)
 
     const onLoadNextPagePart = useCallback(() => {
+        // console.log('onLoadNextPagePart')
         dispatch(fetchNextArticlePageThunk())
     }, [dispatch])
 
@@ -46,7 +47,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPagePart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-
                 <ArticlePageFilter />
                 <ArticleList
                     isLoading={isLoading}

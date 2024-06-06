@@ -15,3 +15,8 @@
     display: flex;
 }
 
+* {
+    scrollbar-width: thin;
+    //scrollbar-color: #162dc9 #2b5fd9;
+    scrollbar-color: var(--primary-color) #fff;
+}

@@ -18,7 +18,6 @@ export const fetchArticleListThunk = createAsyncThunk<Article[], FetchArticleLis
         const {
             dispatch, extra, getState, rejectWithValue
         } = thunkApi;
-        // const { page = 1 } = props;
         const limit = getArticlePageLimit(getState())
         const sort = getArticlePageSort(getState())
         const order = getArticlePageOrder(getState())
@@ -28,8 +27,9 @@ export const fetchArticleListThunk = createAsyncThunk<Article[], FetchArticleLis
 
         try {
             addQueryParams({
-                sort, order, search
-            })
+                sort, order, search, type,
+            });
+            // debugger
             const response = await extra.api.get<Article[]>('/articles', {
                 params: {
                     _expand: 'user',
@@ -38,13 +38,16 @@ export const fetchArticleListThunk = createAsyncThunk<Article[], FetchArticleLis
                     _sort: sort,
                     _order: order,
                     q: search,
-                    type: type === ArticleType.ALL ? undefined : type
+                    type: type === ArticleType.ALL ? undefined : type,
                 },
             });
-            // debugger
+
+            if (!response.data) {
+                throw new Error();
+            }
+
             return response.data;
         } catch (e) {
-            console.log(e);
             return rejectWithValue('error');
         }
     },
