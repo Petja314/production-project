@@ -1,10 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/StoreProvider';
 import { Article } from 'enteties/Article';
-import { getArticlePageLimit } from 'pages/ArticlesPage/ui/ArticlesPage/model/selectors/articlesPageSelectors';
+import {
+    getArticlePageLimit, getArticlePageNum, getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType
+} from 'pages/ArticlesPage/ui/ArticlesPage/model/selectors/articlesPageSelectors';
+import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams';
+import { ArticleType } from 'enteties/Article/model/types/articles';
 
 interface FetchArticleListThunkProps {
-    page? : number
+    // page? : number
+    replace? : boolean
 }
 
 export const fetchArticleListThunk = createAsyncThunk<Article[], FetchArticleListThunkProps, ThunkConfig<string>>(
@@ -13,14 +18,27 @@ export const fetchArticleListThunk = createAsyncThunk<Article[], FetchArticleLis
         const {
             dispatch, extra, getState, rejectWithValue
         } = thunkApi;
-        const { page = 1 } = props;
+        // const { page = 1 } = props;
         const limit = getArticlePageLimit(getState())
+        const sort = getArticlePageSort(getState())
+        const order = getArticlePageOrder(getState())
+        const search = getArticlePageSearch(getState())
+        const page = getArticlePageNum(getState())
+        const type = getArticlePageType(getState())
+
         try {
+            addQueryParams({
+                sort, order, search
+            })
             const response = await extra.api.get<Article[]>('/articles', {
                 params: {
                     _expand: 'user',
-                    _limit: limit,
-                    _page: page
+                    _limit: 10,
+                    _page: page,
+                    _sort: sort,
+                    _order: order,
+                    q: search,
+                    type: type === ArticleType.ALL ? undefined : type
                 },
             });
             // debugger

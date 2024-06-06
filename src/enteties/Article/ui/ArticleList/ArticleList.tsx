@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Article } from 'enteties/Article';
 import { ArticleView } from 'enteties/Article/model/types/articles';
 import { ArticleListItem } from 'enteties/Article/ui/ArticleListItem/ArticleListItem';
+import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import cls from './ArticleList.module.scss'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
@@ -31,6 +32,18 @@ export const ArticleList = memo(({
                 article={article}
                 view={view}
             />
+        )
+    }
+
+    if(!isLoading && !article.length) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Text
+                    size={TextSize.L}
+                    theme={TextTheme.ERROR}
+                    text={t('Article not found')}
+                />
+            </div>
         )
     }
 

@@ -1,7 +1,10 @@
 .Input {
-
+  display: flex;
+  justify-items: center;
 }
 .placeholder{
+  margin-right: 10px;
+
   margin-bottom: 10px;
 }
 .InputField{

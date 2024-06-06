@@ -12,7 +12,7 @@ import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'enteties/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticlesPageCommentsSchema } from 'pages/ArticlesPage';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaverSchema } from 'features/ScrollSaver';
 
 export interface StateSchema {
@@ -26,7 +26,7 @@ export interface StateSchema {
     articleDetails? : ArticleDetailsSchema,
     articleDetailsComments? : ArticleDetailsCommentsSchema,
     addCommentForm? : AddCommentFormSchema,
-    articleList? : ArticlesPageCommentsSchema,
+    articleList? : ArticlesPageSchema,
 
 }
 
