@@ -14,6 +14,7 @@ import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaverSchema } from 'features/ScrollSaver';
 import { ArticleDetailsPageSchema } from 'pages/ArticlesDetailsPage';
+import { EditedArticlePageSchema } from 'features/EditArticlePost';
 
 export interface StateSchema {
     counter: CounterSchema,
@@ -23,12 +24,13 @@ export interface StateSchema {
     // Async reducers
     login? : LoginSchema
     profile? : ProfileSchema,
-    articleDetails? : ArticleDetailsSchema,
+    articleDetails : ArticleDetailsSchema,
     // articleDetailsComments? : ArticleDetailsCommentsSchema,
     // articleDetailsRecommendations? : ArticleDetailsRecommendationsSchema
     addCommentForm? : AddCommentFormSchema,
     articleList? : ArticlesPageSchema,
     articleDetailsPage? : ArticleDetailsPageSchema
+    articleEditPage? : EditedArticlePageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

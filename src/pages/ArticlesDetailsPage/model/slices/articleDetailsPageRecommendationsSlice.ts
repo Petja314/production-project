@@ -9,7 +9,7 @@ import { fetchArticleRecommendationsThunk } from 'pages/ArticlesDetailsPage/mode
 
 // ADAPTER
 const recommendationsAdapter = createEntityAdapter<Article>({
-    selectId: (comment) => comment.id,
+    selectId: (article) => article.id,
 });
 
 // SELECTORS

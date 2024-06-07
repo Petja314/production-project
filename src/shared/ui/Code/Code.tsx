@@ -9,16 +9,20 @@ import CopyIcon from '../../assets/icons/copy.svg'
 interface CodeProps {
     className?: string
     text : string
+    editMode? : boolean
+    handleCodeChange? : (value : any) => void
 }
 
 export const Code = memo((props : CodeProps) => {
-    const { className, text } = props;
+    const {
+        className, text, editMode, handleCodeChange
+    } = props;
     const { t } = useTranslation();
 
     const onCopy = useCallback(() => {
         navigator.clipboard.writeText(text)
     }, [text])
-
+    // console.log('editMode > ', editMode)
     return (
         <pre className={classNames(cls.Code, {}, [className])}>
 
@@ -26,7 +30,11 @@ export const Code = memo((props : CodeProps) => {
                 <Icon Svg={CopyIcon} />
             </Button>
             <code>
-                {text}
+                { editMode ? (
+                    <input type="text" value={text} style={{ all: 'unset', width: '100%' }} onChange={(e : any) => handleCodeChange(e.target.value)} />
+                ) : (
+                    text
+                )}
             </code>
         </pre>
 

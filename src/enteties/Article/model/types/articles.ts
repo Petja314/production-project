@@ -48,13 +48,22 @@ export enum ArticleType {
 }
 
 export interface Article {
-    id : string
+    id? : string
     user : User
     title : string
     subtitle : string
     img : string
     views : number
-    createdAt : string
+    createdAt? : string
     type : ArticleType[]
+    blocks : ArticleBlock[]
+}
+
+export interface EditArticle {
+    title : string
+    subtitle : string
+    img : string
+    createdAt? : string
+    type? : ArticleType[]
     blocks : ArticleBlock[]
 }

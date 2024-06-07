@@ -23,6 +23,7 @@ export const articleDetailsSlice = createSlice({
                 state,
                 action: PayloadAction<Article>,
             ) => {
+                // debugger
                 state.isLoading = false;
                 state.data = action.payload;
             })

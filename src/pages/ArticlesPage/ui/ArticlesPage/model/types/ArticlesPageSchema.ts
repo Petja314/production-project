@@ -6,8 +6,8 @@ import { User } from 'enteties/User/model/types/userSchema';
 import { SortOrder } from 'shared/types';
 
 export interface ArticlesPageSchema extends EntityState<Article>{
-    isLoading: boolean,
-    error: string,
+    isLoading?: boolean,
+    error?: string,
     user? : User,
 
     // pagination

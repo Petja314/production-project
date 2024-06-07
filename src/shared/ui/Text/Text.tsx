@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './Text.module.scss';
@@ -26,6 +26,9 @@ export interface TextProps {
     'data-testid'? : string
     align? : TextAlign
     size? : TextSize
+    editMode? : boolean
+    handleTextChange? : (value : any) => void
+    handleTitleChange? : (value : any) => void
 }
 
 export const Text = memo((props: TextProps) => {
@@ -36,21 +39,62 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.PRIMARY,
         'data-testid': testTextIdNaming,
         align = TextAlign.LEFT,
-        size = TextSize.M
+        size = TextSize.M,
+        editMode = false,
+        handleTextChange,
+        handleTitleChange
     } = props;
     const { t } = useTranslation();
-
+    // const [editText, setEditText] = useState<string>(text)
     const mods : Mods = {
         [cls[theme]]: true,
         [cls[align]]: true,
         [cls[size]]: true,
     };
+
+    const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (handleTitleChange) {
+            handleTitleChange(e.target.value);
+        }
+    };
+
+    const handleChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (handleTextChange) {
+            handleTextChange(e.target.value);
+        }
+    };
+
     return (
         <div
             className={classNames(cls.Text, mods, [className])}
         >
-            {title && <div className={cls.title}>{title}</div>}
-            {text && <div data-testid={testTextIdNaming} className={cls.text}>{text}</div>}
+            {/* {title && <div className={cls.title}>{title}</div>} */}
+            {/* {text && <div data-testid={testTextIdNaming} className={cls.text}>{text}</div>}          */}
+            {/* {title && <div className={cls.title}>{title}</div>} */}
+
+            {editMode ? (
+                <input
+                    type="text"
+                    value={title}
+                    className={cls.title}
+                    style={{ all: 'unset', width: '100%' }}
+                    onChange={handleChangeTitle}
+                />
+            ) : (
+                <div className={cls.title}>{title}</div>
+            )}
+
+            {editMode ? (
+                <input
+                    type="text"
+                    value={text}
+                    className={cls.text}
+                    style={{ all: 'unset', width: '100%' }}
+                    onChange={handleChangeText}
+                />
+            ) : (
+                <div data-testid={testTextIdNaming} className={cls.text}>{text}</div>
+            )}
         </div>
     );
 });

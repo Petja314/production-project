@@ -21,6 +21,7 @@ import { getArticleRecommendationsError, getArticleRecommendationsIsLoading } fr
 import { fetchArticleRecommendationsThunk } from 'pages/ArticlesDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticlesDetailsPage/model/slices';
 import { ArticleType } from 'enteties/Article/model/types/articles';
+import { ArticleDetailsPageHeader } from 'pages/ArticlesDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { addCommentForArticleThunk } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cls from './ArticlesDetailsPage.module.scss'
 
@@ -44,7 +45,6 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
     const recommendationIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const recommendationError = useSelector(getArticleRecommendationsError);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const navigate = useNavigate()
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleIdThunk(id));
@@ -54,10 +54,6 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
         dispatch(addCommentForArticleThunk(text))
     }, [dispatch])
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles)
-    }, [navigate])
-
     if (!id) {
         return (
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -65,17 +61,39 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
             </div>
         );
     }
-
+    // console.log('recommendation arcitle > ', recommendation)
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button theme={ThemeButton.OUTLINED} onClick={onBackToList}>{t('Назад к списку')}</Button>
-                <ArticleDetails id={id} />
-                <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем')} />
-                <ArticleList target="_blank" className={cls.articleRecommendations} article={recommendation} isLoading={recommendationIsLoading} />
-                <Text size={TextSize.L} className={cls.commentTitle} title={t('Комментарии')} />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList isLoading={commentsIsLoading} comments={comments} />
+
+                <ArticleDetailsPageHeader />
+                <ArticleDetails
+                    id={id}
+                />
+                <Text
+                    size={TextSize.L}
+                    className={cls.commentTitle}
+                    title={t('Рекомендуем')}
+                />
+                <ArticleList
+                    target="_blank"
+                    className={cls.articleRecommendations}
+                    article={recommendation}
+                    isLoading={recommendationIsLoading}
+                />
+
+                <Text
+                    size={TextSize.L}
+                    className={cls.commentTitle}
+                    title={t('Комментарии')}
+                />
+                <AddCommentForm
+                    onSendComment={onSendComment}
+                />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
             </Page>
         </DynamicModuleLoader>
     );

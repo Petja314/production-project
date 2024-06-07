@@ -15,8 +15,6 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { ArticleCodeBlockComponent } from 'enteties/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from 'enteties/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from 'enteties/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { useParams } from 'react-router-dom';
-import { StateSchema } from 'app/StoreProvider';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/articles';
 import { articleReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss'
@@ -121,10 +119,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             </>
         );
     }
-
+    console.log('article > ', article)
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
+            <div style={{ border: '1px solid red' }} className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
             </div>
         </DynamicModuleLoader>

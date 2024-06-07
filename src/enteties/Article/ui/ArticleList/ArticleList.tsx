@@ -15,7 +15,7 @@ interface ArticleListProps {
     view? : ArticleView
     target? : HTMLAttributeAnchorTarget
 }
-const getSkeleton = (view: ArticleView) => new Array(view === ArticleView.LIST ? 4 : 10)
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.LIST ? 4 : 10)
     .fill(0)
     .map((item, index) => (
         // eslint-disable-next-line react/no-array-index-key
@@ -29,10 +29,11 @@ export const ArticleList = memo(({
     const renderArticle = (article : Article) => {
         return (
             <ArticleListItem
-                target={target}
-                key={article.id}
                 article={article}
                 view={view}
+                className={cls.card}
+                key={article.id}
+                target={target}
             />
         )
     }
@@ -51,12 +52,11 @@ export const ArticleList = memo(({
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {article.length > 0 ? (
-                article.map(renderArticle)
-            ) : (
-                null
-            )}
-            {isLoading && getSkeleton(view)}
+
+            {article.length > 0
+                ? article.map(renderArticle)
+                : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

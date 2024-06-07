@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/StoreProvider';
 import { ArticleSortField, ArticleType } from 'enteties/Article/model/types/articles';
 
-export const getLoadingArticlePage = (state : StateSchema) => state.articleList?.isLoading
+export const getLoadingArticlePage = (state : StateSchema) => state.articleList?.isLoading || false
 export const getViewStateArticlePage = (state : StateSchema) => state.articleList?.view
 export const getArticlePageNum = (state : StateSchema) => state.articleList?.page || 1
 export const getArticlePageLimit = (state : StateSchema) => state.articleList?.limit || 10

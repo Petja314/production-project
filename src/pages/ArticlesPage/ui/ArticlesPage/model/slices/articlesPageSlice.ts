@@ -71,7 +71,7 @@ export const articlesPageSlice = createSlice({
             })
             .addCase(fetchArticleListThunk.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.hasMore = action.payload.length > state.limit
+                state.hasMore = action.payload.length > 1
                 if(action.meta.arg.replace) {
                     articleAdapter.setAll(state, action.payload)
                 } else{

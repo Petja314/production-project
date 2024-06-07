@@ -31,6 +31,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const view = useSelector(getViewStateArticlePage)
     const [searchParams, setSearchParams] = useSearchParams();
     // console.log('searchParams', searchParams)
+    // console.log('ArticlesPage article > ', article)
 
     const onLoadNextPagePart = useCallback(() => {
         // console.log('onLoadNextPagePart')
@@ -40,9 +41,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     useInitialEffect(() => {
         dispatch(initArticlesPageThunk(searchParams))
     })
-
+    // console.log('ArticlesPage article > ', article)
     return (
-        <DynamicModuleLoader reducers={reducer} removeAfterUnmount={false}>
+        <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
             <Page
                 onScrollEnd={onLoadNextPagePart}
                 className={classNames(cls.ArticlesPage, {}, [className])}

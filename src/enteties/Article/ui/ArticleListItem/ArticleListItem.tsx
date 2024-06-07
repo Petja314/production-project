@@ -28,7 +28,7 @@ export const ArticleListItem = memo(({
     const { t } = useTranslation();
     const navigate = useNavigate()
 
-    // console.log('article?.type?.', article?.type)
+    // console.log('ArticleListItem article > ', article)
     const types = <Text text={article.type.join(', ')} className={cls.types} />
     const views = (
         <>
