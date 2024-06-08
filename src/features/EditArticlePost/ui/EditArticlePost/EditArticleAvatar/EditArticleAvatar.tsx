@@ -1,10 +1,9 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import UploadPhoto from 'features/uploadPhoto/UploadPhoto';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Article, ArticleImageBlock, EditArticle } from 'enteties/Article/model/types/articles';
+import { EditArticle } from 'enteties/Article/model/types/articles';
 import { editArticlePostActions } from 'features/EditArticlePost';
 import cls from './EditArticleAvatar.module.scss'
 

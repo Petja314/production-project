@@ -14,8 +14,8 @@
   "articles": [
     {
       "id": "1",
-      "title": "JavaScript Fundamentals test no 33333",
-      "subtitle": "What’s new in JavaScript for 2023? test no 2",
+      "title": "JavaScript Fundamental test",
+      "subtitle": "What’s new in JavaScript for 2023?  test",
       "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1024px-SpongeBob_SquarePants_character.svg.png",
       "views": 1500,
       "createdAt": "01.01.2023",
@@ -27,22 +27,22 @@
         {
           "id": "1",
           "type": "TEXT",
-          "title": "Introduction to JavaScript test no 2",
+          "title": "Introduction to JavaScript test",
           "paragraphs": [
-            "JavaScript is a versatile programming language used for web development. test no 2",
-            "It can be used both on the client-side and server-side. test no 2"
+            "JavaScript is a versatile programming language used for web development. test",
+            "It can be used both on the client-side and server-side. test"
           ]
         },
         {
           "id": "2",
           "type": "CODE",
-          "code": "console.log('Hello, World!'); test no 2"
+          "code": "console.log('Hello, World!') test"
         },
         {
           "id": "3",
           "type": "IMAGE",
           "src": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1024px-SpongeBob_SquarePants_character.svg.png",
-          "title": "JavaScript Logo test no 2"
+          "title": "JavaScript Logo test"
         }
       ]
     },

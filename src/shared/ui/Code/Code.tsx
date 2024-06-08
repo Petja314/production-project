@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { TextArea } from 'shared/ui/TextArea/TextArea';
 import cls from './Code.module.scss'
 import CopyIcon from '../../assets/icons/copy.svg'
 
@@ -17,7 +18,6 @@ export const Code = memo((props : CodeProps) => {
     const {
         className, text, editMode, handleCodeChange
     } = props;
-    const { t } = useTranslation();
 
     const onCopy = useCallback(() => {
         navigator.clipboard.writeText(text)
@@ -31,10 +31,9 @@ export const Code = memo((props : CodeProps) => {
             </Button>
             <code>
                 { editMode ? (
-                    <input
-                        type="text"
+                    <TextArea
                         value={text}
-                        onChange={(e : any) => handleCodeChange(e.target.value)}
+                        onChange={handleCodeChange}
                     />
                 ) : (
                     text

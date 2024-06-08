@@ -30,6 +30,8 @@ import UploadPhoto from 'features/uploadPhoto/UploadPhoto';
 import { EditArticleAvatar } from 'features/EditArticlePost/ui/EditArticlePost/EditArticleAvatar/EditArticleAvatar';
 import { fetchEditArticlePostThunk } from 'features/EditArticlePost/model/services/fetchEditArticlePostThunk';
 import useTimedNotification from 'shared/lib/hooks/useTimedNotification/useTimedNotification';
+import { profileActions } from 'enteties/Profile';
+import { TextArea } from 'shared/ui/TextArea/TextArea';
 import cls from './ArticleEditPage.module.scss'
 
 interface ArticleEditPageProps {
@@ -47,7 +49,7 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
     const dispatch = useAppDispatch();
     const error = useSelector(getEditArticleErrorState)
     const notification = useSelector(getEditArticleNotification)
-    const showNotification = useTimedNotification(notification, 2000)
+    const showNotification = useTimedNotification(notification, 1000)
 
     useEffect(() => {
         dispatch(fetchEditArticlePostThunk(id))
@@ -60,7 +62,6 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
                 <h2 style={{ marginBottom: '20px', textAlign: 'center' }}>
                     Редактирование статьи с ID:
                     {id}
-
                 </h2>
 
                 <h3>
@@ -71,7 +72,11 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
                     )}
                 </h3>
 
-                <EditArticleDetailsPageHeader articleId={id} />
+                <EditArticleDetailsPageHeader
+                    notification={notification}
+                    showNotification={showNotification}
+                    articleId={id}
+                />
                 <ArticleDetails id={id} />
 
             </Page>

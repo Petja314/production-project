@@ -32,7 +32,7 @@ export const Modal = memo((props: ModalProps) => {
     const [isMounted, setIsMounted] = useState<boolean>(false);
     const { theme } = useTheme();
     const timeRef = useRef() as MutableRefObject<TimeoutType>;
-
+    // console.log('onClose', onClose)
     useEffect(() => {
         if (isOpen) {
             setIsMounted(true);
@@ -43,6 +43,7 @@ export const Modal = memo((props: ModalProps) => {
     }, [isOpen]);
 
     const closeHandler = useCallback(() => {
+        console.log('in')
         if (onClose) {
             setIsClosing(true);
             timeRef.current = setTimeout(() => {
