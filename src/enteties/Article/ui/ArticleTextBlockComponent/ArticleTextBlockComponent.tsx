@@ -16,7 +16,6 @@ export const ArticleTextBlockComponent = memo(({ className, block }: ArticleText
     return (
         <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
             {block.title && <Text title={block.title} className={cls.title} /> }
-
             {block.paragraphs.map((paragraph) => (
                 <Text
                     key={paragraph}

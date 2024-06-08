@@ -15,6 +15,12 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { ArticleCodeBlockComponent } from 'enteties/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from 'enteties/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from 'enteties/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { getArticleEditDetailsData, getEditArticleEditMode } from 'features/EditArticlePost/model/selectors/getEditArticlePosts/getEditArticlePosts';
+import { EditArticleAvatar } from 'features/EditArticlePost/ui/EditArticlePost/EditArticleAvatar/EditArticleAvatar';
+import { EditArticleTitle } from 'features/EditArticlePost/ui/EditArticlePost/EditArticleTitle/EditArticleTitle';
+import { EditArticleCodeBlockComponent } from 'features/EditArticlePost/ui/EditArticlePost/EditArticleCodeBlockComponent/EditArticleCodeBlockComponent';
+import { EditArticleImageBlockComponent } from 'features/EditArticlePost/ui/EditArticlePost/EditArticleImageBlockComponent/EditArticleImageBlockComponent';
+import { EditArticleTextBlockComponent } from 'features/EditArticlePost/ui/EditArticlePost/EditArticleTextBlockComponent/EditArticleTextBlockComponent';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/articles';
 import { articleReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss'
@@ -33,38 +39,64 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
+    const articleEditMode = useSelector(getArticleEditDetailsData)
     const error = useSelector(getArticleDetailsError);
+    const editMode = useSelector(getEditArticleEditMode)
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
         case ArticleBlockType.CODE:
-            return (
+            return (editMode ? (
+                <EditArticleCodeBlockComponent
+                    key={block.id}
+                    block={block}
+                    className={cls.block}
+                    editMode
+                />
+            ) : (
                 <ArticleCodeBlockComponent
                     key={block.id}
                     block={block}
                     className={cls.block}
                 />
+            )
             );
         case ArticleBlockType.IMAGE:
-            return (
+            return (editMode ? (
+                <EditArticleImageBlockComponent
+                    key={block.id}
+                    block={block}
+                    className={cls.block}
+                    editMode
+                />
+            ) : (
                 <ArticleImageBlockComponent
                     key={block.id}
                     block={block}
                     className={cls.block}
                 />
+            )
             );
         case ArticleBlockType.TEXT:
-            return (
+            return (editMode ? (
+                <EditArticleTextBlockComponent
+                    key={block.id}
+                    block={block}
+                    className={cls.block}
+                    editMode
+                />
+            ) : (
                 <ArticleTextBlockComponent
                     key={block.id}
                     className={cls.block}
                     block={block}
                 />
+            )
             );
         default:
             return null;
         }
-    }, []);
+    }, [editMode]);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -95,18 +127,26 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <>
                 <div className={cls.avatarWrapper}>
-                    <Avatar
-                        size={200}
-                        src={article?.img}
-                        className={cls.avatar}
-                    />
+                    { editMode ? (
+                        <EditArticleAvatar article={articleEditMode} />
+                    ) : (
+                        <Avatar
+                            size={200}
+                            src={article?.img}
+                            className={cls.avatar}
+                        />
+                    )}
                 </div>
-                <Text
-                    className={cls.title}
-                    title={article?.title}
-                    text={article?.subtitle}
-                    size={TextSize.L}
-                />
+                { editMode ? (
+                    <EditArticleTitle editMode />
+                ) : (
+                    <Text
+                        className={cls.title}
+                        title={article?.title}
+                        text={article?.subtitle}
+                        size={TextSize.L}
+                    />
+                )}
                 <div className={cls.articleInfo}>
                     <Icon className={cls.icon} Svg={EyeIcon} />
                     <Text text={String(article?.views)} />
@@ -115,11 +155,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     <Icon className={cls.icon} Svg={CalendarIcon} />
                     <Text text={article?.createdAt} />
                 </div>
-                {article?.blocks && article?.blocks.map(renderBlock)}
+                { editMode ? (
+                    articleEditMode?.blocks.map(renderBlock)
+                ) : (
+                    article?.blocks.map(renderBlock)
+                ) }
             </>
         );
     }
-    console.log('article > ', article)
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div style={{ border: '1px solid red' }} className={classNames(cls.ArticleDetails, {}, [className])}>

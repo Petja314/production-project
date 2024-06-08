@@ -12,7 +12,7 @@ interface ArticleCodeBlockComponentProps {
 
 export const ArticleCodeBlockComponent = memo(({ className, block }: ArticleCodeBlockComponentProps) => {
     const { t } = useTranslation();
-
+    console.log('ArticleCodeBlockComponent RENDER')
     return (
         <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
             <Code text={block.code} />

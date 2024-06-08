@@ -68,32 +68,31 @@ export const Text = memo((props: TextProps) => {
         <div
             className={classNames(cls.Text, mods, [className])}
         >
-            {/* {title && <div className={cls.title}>{title}</div>} */}
-            {/* {text && <div data-testid={testTextIdNaming} className={cls.text}>{text}</div>}          */}
-            {/* {title && <div className={cls.title}>{title}</div>} */}
 
-            {editMode ? (
+            {title && editMode ? (
                 <input
                     type="text"
                     value={title}
                     className={cls.title}
-                    style={{ all: 'unset', width: '100%' }}
                     onChange={handleChangeTitle}
                 />
             ) : (
-                <div className={cls.title}>{title}</div>
+                <div className={cls.title}>
+                    {title}
+                </div>
             )}
 
-            {editMode ? (
+            {text && editMode ? (
                 <input
                     type="text"
                     value={text}
                     className={cls.text}
-                    style={{ all: 'unset', width: '100%' }}
                     onChange={handleChangeText}
                 />
             ) : (
-                <div data-testid={testTextIdNaming} className={cls.text}>{text}</div>
+                <div data-testid={testTextIdNaming} className={cls.text}>
+                    {text}
+                </div>
             )}
         </div>
     );

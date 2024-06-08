@@ -14,9 +14,9 @@
   "articles": [
     {
       "id": "1",
-      "title": "JavaScript Fundamentals",
-      "subtitle": "What’s new in JavaScript for 2023?",
-      "img": "https://via.placeholder.com/150",
+      "title": "JavaScript Fundamentals test no 33333",
+      "subtitle": "What’s new in JavaScript for 2023? test no 2",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1024px-SpongeBob_SquarePants_character.svg.png",
       "views": 1500,
       "createdAt": "01.01.2023",
       "userId": "1",
@@ -27,22 +27,22 @@
         {
           "id": "1",
           "type": "TEXT",
-          "title": "Introduction to JavaScript",
+          "title": "Introduction to JavaScript test no 2",
           "paragraphs": [
-            "JavaScript is a versatile programming language used for web development.",
-            "It can be used both on the client-side and server-side."
+            "JavaScript is a versatile programming language used for web development. test no 2",
+            "It can be used both on the client-side and server-side. test no 2"
           ]
         },
         {
           "id": "2",
           "type": "CODE",
-          "code": "console.log('Hello, World!');"
+          "code": "console.log('Hello, World!'); test no 2"
         },
         {
           "id": "3",
           "type": "IMAGE",
-          "src": "https://via.placeholder.com/200",
-          "title": "JavaScript Logo"
+          "src": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1024px-SpongeBob_SquarePants_character.svg.png",
+          "title": "JavaScript Logo test no 2"
         }
       ]
     },
@@ -82,8 +82,8 @@
     },
     {
       "id": "3",
-      "title": "Understanding React",
-      "subtitle": "React best practices in 2023",
+      "title": "title with ID 3 ",
+      "subtitle": "React NEW Subtitle",
       "img": "https://via.placeholder.com/150",
       "views": 1300,
       "createdAt": "03.01.2023",
@@ -806,38 +806,48 @@
       ]
     },
     {
-      "id": "23",
-      "title": "JavaScript Fundamentals",
-      "subtitle": "What’s new in JavaScript for 2023?",
-      "img": "https://via.placeholder.com/150",
-      "views": 1500,
-      "createdAt": "01.01.2023",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
+      "articlePost": {
+        "id": "23",
+        "title": "JavaScript Fundamentals",
+        "subtitle": "What’s new in JavaScript for 2023?",
+        "img": "https://via.placeholder.com/150",
+        "views": 1500,
+        "createdAt": "01.01.2023",
+        "userId": "1",
+        "type": [
+          "IT"
+        ],
+        "blocks": [
+          {
+            "id": "1",
+            "type": "TEXT",
+            "title": "Introduction to JavaScript",
+            "paragraphs": [
+              "JavaScript is a versatile programming language used for web development.",
+              "It can be used both on the client-side and server-side."
+            ]
+          },
+          {
+            "id": "2",
+            "type": "CODE",
+            "code": "console.log('Hello, World!');"
+          },
+          {
+            "id": "3",
+            "type": "IMAGE",
+            "src": "https://via.placeholder.com/200",
+            "title": "JavaScript Logo"
+          }
+        ],
+        "user": {
           "id": "1",
-          "type": "TEXT",
-          "title": "Introduction to JavaScript",
-          "paragraphs": [
-            "JavaScript is a versatile programming language used for web development.",
-            "It can be used both on the client-side and server-side."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "CODE",
-          "code": "console.log('Hello, World!');"
-        },
-        {
-          "id": "3",
-          "type": "IMAGE",
-          "src": "https://via.placeholder.com/200",
-          "title": "JavaScript Logo"
+          "username": "admin",
+          "password": "123",
+          "role": "ADMIN",
+          "avatar": "https://avatars.githubusercontent.com/u/101811219?s=400&u=d1b15aae8c1151deb91e5457fa7ffc73f7f1e4b5&v=4"
         }
-      ]
+      },
+      "id": "23"
     },
     {
       "id": "24",

@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { getArticleEditDetailsData } from 'features/EditArticlePost/model/selectors/getEditArticlePosts/getEditArticlePosts';
+import { editArticlePostThunk } from 'features/EditArticlePost/model/services/editArticlePostThunk';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './EditArticleDetailsPageHeader.module.scss'
 
 interface EditArticleDetailsPageHeaderProps {
@@ -17,13 +19,15 @@ export const EditArticleDetailsPageHeader = memo(({ className, articleId }: Edit
     const { t } = useTranslation();
     const navigate = useNavigate()
     const articleData = useSelector(getArticleEditDetailsData)
+    const dispatch = useAppDispatch()
 
     const onBackToArticleList = useCallback(() => {
         navigate(`${RoutePath.articles}/${articleId}`)
-    }, [navigate])
+    }, [articleId, navigate])
 
     const saveArticleHandler = useCallback(() => {
-    }, [])
+        dispatch(editArticlePostThunk(articleId))
+    }, [articleId, dispatch])
 
     const deleteArticleHandler = useCallback(() => {
     }, [])

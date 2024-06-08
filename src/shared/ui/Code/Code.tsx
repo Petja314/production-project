@@ -31,7 +31,11 @@ export const Code = memo((props : CodeProps) => {
             </Button>
             <code>
                 { editMode ? (
-                    <input type="text" value={text} style={{ all: 'unset', width: '100%' }} onChange={(e : any) => handleCodeChange(e.target.value)} />
+                    <input
+                        type="text"
+                        value={text}
+                        onChange={(e : any) => handleCodeChange(e.target.value)}
+                    />
                 ) : (
                     text
                 )}

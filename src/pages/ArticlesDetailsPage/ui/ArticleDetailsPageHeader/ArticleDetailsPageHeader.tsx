@@ -21,9 +21,7 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
     const navigate = useNavigate()
     const userData = useSelector(getUserAuthData)
     const article = useSelector(getArticleDetailsData)
-
     const canEdit = useSelector(getCanEditArticle)
-    // const [searchParams, setSearchParams] = useSearchParams();
     const dispatch = useAppDispatch()
 
     const onBackToList = useCallback(() => {

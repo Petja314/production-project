@@ -15,8 +15,8 @@ interface EditArticleCodeBlockComponentProps {
 }
 
 export const EditArticleCodeBlockComponent = memo(({ className, block, editMode }: EditArticleCodeBlockComponentProps) => {
-    const { t } = useTranslation();
     const dispatch = useAppDispatch()
+    console.log('RENDER')
 
     const handleCodeChange = useCallback((value : string) => {
         dispatch(editArticlePostActions.setEditCodeBlock({ id: block.id, code: value }))

@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import UploadPhoto from 'features/uploadPhoto/UploadPhoto';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Article, ArticleImageBlock } from 'enteties/Article/model/types/articles';
+import { Article, ArticleImageBlock, EditArticle } from 'enteties/Article/model/types/articles';
 import { editArticlePostActions } from 'features/EditArticlePost';
 import cls from './EditArticleAvatar.module.scss'
 
 interface EditArticleAvatarProps {
     className?: string
-    article : Article
+    article : EditArticle
 }
 
 export const EditArticleAvatar = memo(({ className, article, }: EditArticleAvatarProps) => {
@@ -26,7 +26,6 @@ export const EditArticleAvatar = memo(({ className, article, }: EditArticleAvata
                 src={article?.img}
                 className={cls.avatar}
             />
-
             <UploadPhoto
                 data={article?.img}
                 onChangeAvatar={onChangeAvatar}

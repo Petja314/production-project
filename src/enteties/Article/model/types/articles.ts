@@ -60,10 +60,13 @@ export interface Article {
 }
 
 export interface EditArticle {
+    id? : string
     title : string
     subtitle : string
     img : string
+    views? : number,
     createdAt? : string
+    userId? : string
     type? : ArticleType[]
     blocks : ArticleBlock[]
 }

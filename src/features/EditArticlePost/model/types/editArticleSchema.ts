@@ -5,5 +5,7 @@ export interface EditedArticlePageSchema {
     isLoading?: boolean,
     error?: string,
     // data : EditArticle
-    data : Article
+    data : EditArticle,
+    editMode? : boolean,
+    notification? : string
 }

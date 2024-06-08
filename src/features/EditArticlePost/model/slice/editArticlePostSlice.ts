@@ -6,6 +6,7 @@ import {
 } from 'enteties/Article/model/types/articles';
 import { User } from 'enteties/User/model/types/userSchema';
 import { fetchArticleByIdThunk } from 'enteties/Article/model/services/fetchArticleById/fetchArticleById';
+import { fetchEditArticlePostThunk } from 'features/EditArticlePost/model/services/fetchEditArticlePostThunk';
 
 const block = [
     {
@@ -34,19 +35,17 @@ const initialState: EditedArticlePageSchema = {
     isLoading: false,
     error: undefined,
     data: undefined,
-    // data: {
-    //     title: '',
-    //     subtitle: '',
-    //     img: '',
-    //     type: [],
-    //     blocks: []
-    // },
+    editMode: false,
+    notification: ''
 };
 
 export const editArticlePostSlice = createSlice({
     name: 'editArticlePost',
     initialState,
     reducers: {
+        setEditMode: (state, action: PayloadAction<boolean>) => {
+            state.editMode = action.payload
+        },
         setEditArticleImage: (state, action: PayloadAction<string>) => {
             state.data.img = action.payload
         },
@@ -60,6 +59,9 @@ export const editArticlePostSlice = createSlice({
         setEditArticleType: (state, action: PayloadAction<ArticleType[]>) => {
             state.data.type = action.payload
         },
+        setNotification: (state, action: PayloadAction<string>) => {
+            state.notification = action.payload
+        },
         setEditArticleTextBlockTitle: (state, action: PayloadAction<{id : string, title : string}>) => {
             // state.data.blocks.ArticleTextBlock.title = action.payload
             const { id, title } = action.payload
@@ -69,13 +71,13 @@ export const editArticlePostSlice = createSlice({
                 textBlockTitle.title = title
             }
         },
-        setEditArticleTextBlockParagraph: (state, action: PayloadAction<{id : string, paragraphs : any}>) => {
-            // state.data.blocks.ArticleTextBlock.paragraphs = action.payload
-            const { id, paragraphs } = action.payload
-            const textBlockParagraphs = state.data?.blocks
-                .find((block) => block.id === id && block.type === ArticleBlockType.TEXT) as ArticleTextBlock
-            if(textBlockParagraphs) {
-                textBlockParagraphs.paragraphs = paragraphs
+        setEditArticleTextBlockParagraph: (state, action: PayloadAction<{ id: string, paragraphs: string[] }>) => {
+            const { id, paragraphs } = action.payload;
+            const textBlock = state.data?.blocks.find(
+                (block) => block.id === id && block.type === ArticleBlockType.TEXT
+            ) as ArticleTextBlock;
+            if (textBlock) {
+                textBlock.paragraphs = paragraphs;
             }
         },
         setEditCodeBlock: (state, action: PayloadAction<{id : string, code : string}>) => {
@@ -108,11 +110,11 @@ export const editArticlePostSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticleByIdThunk.pending, (state) => {
+            .addCase(fetchEditArticlePostThunk.pending, (state) => {
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleByIdThunk.fulfilled, (
+            .addCase(fetchEditArticlePostThunk.fulfilled, (
                 state,
                 action: PayloadAction<Article>,
             ) => {
@@ -120,7 +122,7 @@ export const editArticlePostSlice = createSlice({
                 state.isLoading = false;
                 state.data = action.payload;
             })
-            .addCase(fetchArticleByIdThunk.rejected, (state, action) => {
+            .addCase(fetchEditArticlePostThunk.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             });

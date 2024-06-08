@@ -29,7 +29,7 @@ export const EditArticleImageBlockComponent = memo(({ className, block, editMode
     return (
         <div className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
 
-            <div>
+            <div className={cls.editImageWrapper}>
                 <img src={block.src} alt="image" className={cls.img} />
                 <UploadPhoto
                     data={block.src}
@@ -40,9 +40,9 @@ export const EditArticleImageBlockComponent = memo(({ className, block, editMode
             {block.title
                 && (
                     <input
+                        className={cls.editImageTitle}
                         type="text"
                         value={block?.title}
-                        style={{ all: 'unset', width: '100%', }}
                         onChange={handleChangeTitleTest}
                     />
                 )}
